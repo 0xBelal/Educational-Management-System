@@ -1,0 +1,1 @@
+StudentID <-> FullName <-> Faculty <-> GPA 
