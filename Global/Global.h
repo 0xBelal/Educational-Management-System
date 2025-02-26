@@ -20,16 +20,22 @@ const string ComputerScience = "E:\\Computer Science\\Projects\\Educational Mana
 const string AllAdmin_File = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\AllAdmin.txt";
 
 int GenerateID() {
-      fstream file("E:\\Computer Science\\Projects\\Educational Management System\\Global\\ID.txt",ios::in | ios::out);
+      fstream oFile("E:\\Computer Science\\Projects\\Educational Management System\\Global\\ID.txt",ios::in | ios::out);
         string line;
         int ID;
-        if(file.is_open()) {
-            while(getline(file,line)) {
+        if(oFile.is_open()) {
+            while(getline(oFile,line)) {
                 ID = stoi(line);
-                cout<<to_string(ID+1);
             }
-            file.close();
+            oFile.close();
         }
+    
+    oFile.open("E:\\Computer Science\\Projects\\Educational Management System\\Global\\ID.txt", ios::out);
+    if(oFile.is_open()) {
+        oFile<<to_string(ID + 1);
+        oFile.close();
+    }
+
     return ID;
 }
 #endif //GLOBAL_H

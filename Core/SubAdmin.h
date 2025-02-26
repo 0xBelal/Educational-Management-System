@@ -57,6 +57,7 @@ public:
 
         fstream file(AllAdmin_File, ios::app | ios::out);
         if (file.is_open()) {
+            this->setID(to_string(GenerateID()));
             file << this->ConvertAdminObjectToRecord()<<endl;
         } else {
             return false;
