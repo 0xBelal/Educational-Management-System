@@ -12,6 +12,8 @@
 #include "../lib/clsInputValidate.h"
 #include "../Core/Admin.h"
 #include "../Screens/AdminScreens/AdminMainScreen.h"
+#include "../Core/SubAdmin.h"
+#include "../Screens/sAdminScreens/sAdminMainScreen.h"
 using namespace std;
 
 // Enum for Screen Types
@@ -33,6 +35,22 @@ private:
             AdminLoginScreen();
         }
     }
+
+    static void sAdminLoginScreen() {
+        system("cls");
+        Screen::DrawScreen("sub-Admin Login");
+        SubAdmin sAdmin;
+        cout<<"National ID : ";
+        sAdmin.setNationalID(clsInputValidate::ReadString());
+        cout<<"Password    : ";
+        sAdmin.setPassword(clsInputValidate::ReadString());
+        if(!sAdmin.isSubAdmin()) {
+            cout<<"sub-Admin login failed...\n";
+            system("pause>0");
+            sAdminLoginScreen();
+        }
+
+    }
 public:
     // Static Method to Show Login Screen
     static void show() {
@@ -45,7 +63,9 @@ public:
                    AdminMainScreen::Show();
             break;
             case eScreens::eFacultyAdmin:
-                Screen::DrawScreen("Faculty Admin Login");
+              //  Screen::DrawScreen("Faculty Admin Login");
+                  sAdminLoginScreen();
+                  sAdminMainScreen::Show();
             break;
             case eScreens::eStudent:
                 Screen::DrawScreen("Student Login");

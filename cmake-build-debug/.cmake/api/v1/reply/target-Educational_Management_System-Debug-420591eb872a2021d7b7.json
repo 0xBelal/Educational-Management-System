@@ -107,7 +107,9 @@
 				9,
 				10,
 				11,
-				12
+				12,
+				13,
+				14
 			]
 		}
 	],
@@ -177,6 +179,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "Core/Student.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Screens/sAdminScreens/sAdminMainScreen.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Screens/sAdminScreens/AddNewStudentScreen.h",
 			"sourceGroupIndex" : 1
 		}
 	],

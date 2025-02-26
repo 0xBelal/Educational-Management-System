@@ -15,4 +15,6 @@ add_executable(Educational_Management_System main.cpp
         Screens/AdminScreens/AdminMainScreen.h
         Core/SubAdmin.h
         Screens/AdminScreens/AddNewSubAdminScreen.h
-        Core/Student.h)
+        Core/Student.h
+        Screens/sAdminScreens/sAdminMainScreen.h
+        Screens/sAdminScreens/AddNewStudentScreen.h)
