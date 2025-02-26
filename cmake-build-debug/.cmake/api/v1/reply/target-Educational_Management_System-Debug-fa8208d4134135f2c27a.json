@@ -106,7 +106,8 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12
 			]
 		}
 	],
@@ -171,6 +172,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "Screens/AdminScreens/AddNewSubAdminScreen.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Core/Student.h",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -6,8 +6,9 @@
 #define STUDENT_H
 
 
-
-class Student {
+#include <iostream>
+#include "Person.h"
+class Student : public Person{
 
 };
 

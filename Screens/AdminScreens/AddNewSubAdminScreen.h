@@ -31,7 +31,7 @@ public:
         cout<<"Faculty     : ";
         sAdmin.setFacultyName(clsInputValidate::ReadString());
 
-        sAdmin.AddNewAdmin();
+        if(sAdmin.AddNewAdmin()) cout<<"\nAdd successfully....\n";
 
 
     }
