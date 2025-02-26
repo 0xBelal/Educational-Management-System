@@ -1,15 +1,19 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 
+
 #include <iostream>
 #include <fstream>
 #include <vector>       // Include vector header
 #include <string>       // Include string header
 #include "../Core/Person.h"
-#include "../Global/Global.h"
+
+#include "../Global/Global.h"    // circular dependency
+
 #include "../lib/clsString.h"  // Assuming clsString is here
 
 using namespace std;
+
 
 class Admin : public Person {
 
@@ -29,6 +33,8 @@ private:
         return admin;
     }
 
+
+
 public:
     // Default constructor calling base class default constructor
     Admin() : Person() {}
@@ -36,8 +42,8 @@ public:
     // Parameterized constructor calling base class constructor
    // 100 <-> Admin <-> 30410201203234 <-> Admin
     Admin(const string& ID, const string& FullName,  const string& NationalID, const string& Password)
-        : Person(ID, FullName, Password) {
-        this->setNationalID(NationalID);
+        : Person(ID, FullName, Password,NationalID) {
+       // this->setNationalID(NationalID);
     }
 
     // Method to check if user is admin

@@ -6,6 +6,8 @@
 #define SUBADMIN_H
 
 #include <iostream>
+#include <vector>
+#include "../Core/Admin.h"
 #include "../Global/Global.h"
 #include "Admin.h"
 
@@ -52,20 +54,39 @@ public:
     static vector<SubAdmin> GetAllSubAdmins() {
         return _LoadAdminData(AllAdmin_File);
     }
+    void Assigin(SubAdmin &SAdmin) {
+        setID(SAdmin.getID());
+        setFullName(SAdmin.getFullName());
+        setNationalID(SAdmin.getNationalID());
+        setPassword(SAdmin.getPassword());
+        SAdmin.setFacultyName(SAdmin.getFacultyName());
 
-    bool AddNewAdmin() {
+    }
+    bool isSubAdmin() {
+        vector<SubAdmin> AllAdmin = GetAllSubAdmins();
 
-        fstream file(AllAdmin_File, ios::app | ios::out);
-        if (file.is_open()) {
-            this->setID(to_string(GenerateID()));
-            file << this->ConvertAdminObjectToRecord()<<endl;
-        } else {
+        for(SubAdmin &sAdmin : AllAdmin) {
+            if(getNationalID() == sAdmin.getNationalID() && getPassword() == sAdmin.getPassword()){
+                this->Assigin(sAdmin);
+                return true;
+            }
+
             return false;
         }
-        file.close();
-
-        return true;
     }
+    bool AddNewAdmin(){
+
+            fstream file(AllAdmin_File, ios::app | ios::out);
+            if (file.is_open()) {
+                this->setID(to_string(GenerateID()));
+                file << this->ConvertAdminObjectToRecord()<<endl;
+            } else {
+                return false;
+            }
+            file.close();
+
+            return true;
+        }
 
 };
 #endif //SUBADMIN_H

@@ -19,8 +19,8 @@ public:
     Person() : ID(""), FullName(""), Password(""), NationalID("") {}
 
     // Parameterized constructor
-    Person(string ID, string FullName, string Password)
-        : ID(ID), FullName(FullName), Password(Password) {}
+    Person(string ID, string FullName, string Password,const string& NID)
+        : ID(ID), FullName(FullName), Password(Password),NationalID(NID) {}
 
     string getFullName() const { return FullName; }
     string getNationalID() const { return NationalID; }
