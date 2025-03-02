@@ -1,14 +1,10 @@
 # ninja log v6
-14	4783	7622911919035079	CMakeFiles/Educational_Management_System.dir/main.cpp.obj	43924b7fcf3aaf8c
-4784	5349	7622911966737993	Educational_Management_System.exe	6b4f9632a02a2388
-9	832	7625705071264016	build.ninja	3716330b3db911f5
-21	4569	7625708181974689	CMakeFiles/Educational_Management_System.dir/main.cpp.obj	43924b7fcf3aaf8c
-4570	5261	7625708227462705	Educational_Management_System.exe	6b4f9632a02a2388
-24	5349	7625928850337172	CMakeFiles/Educational_Management_System.dir/main.cpp.obj	43924b7fcf3aaf8c
-5350	6393	7625928903599835	Educational_Management_System.exe	6b4f9632a02a2388
-19	5453	7625930784247591	CMakeFiles/Educational_Management_System.dir/main.cpp.obj	43924b7fcf3aaf8c
-5454	6123	7625930838599490	Educational_Management_System.exe	6b4f9632a02a2388
-16	4958	7625933039943093	CMakeFiles/Educational_Management_System.dir/main.cpp.obj	43924b7fcf3aaf8c
-4960	5873	7625933089392663	Educational_Management_System.exe	6b4f9632a02a2388
 20	6686	7625934845319361	CMakeFiles/Educational_Management_System.dir/main.cpp.obj	43924b7fcf3aaf8c
 6687	7759	7625934911990341	Educational_Management_System.exe	6b4f9632a02a2388
+9	832	7625949562795445	build.ninja	3716330b3db911f5
+23	5038	7625952060758121	CMakeFiles/Educational_Management_System.dir/main.cpp.obj	43924b7fcf3aaf8c
+5038	5555	7625952110909709	Educational_Management_System.exe	6b4f9632a02a2388
+16	3803	7625953088695029	CMakeFiles/Educational_Management_System.dir/main.cpp.obj	43924b7fcf3aaf8c
+3804	4315	7625953126564094	Educational_Management_System.exe	6b4f9632a02a2388
+13	3504	7625954855700479	CMakeFiles/Educational_Management_System.dir/main.cpp.obj	43924b7fcf3aaf8c
+3505	4034	7625954890617113	Educational_Management_System.exe	6b4f9632a02a2388

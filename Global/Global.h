@@ -40,5 +40,5 @@ int GenerateID() {
 const string StudentCourses = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses";
 const string StudentInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\S";
 const string AllStudent     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\All.txt";
-
+const string AllCourses     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\AllCourses.txt"
 #endif // GLOBAL_H

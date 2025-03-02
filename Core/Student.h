@@ -36,6 +36,28 @@ private :
         this->setDegree(student.getDegree());
 
     }
+    vector<Student> LoadStudents() {
+        vector<Student> students;
+        vector<string> Record;
+        ifstream file;
+        file.open(AllStudent.c_str(),ios::in);
+        if(file.is_open()) {
+            string line;
+           while(getline(file,line)) {
+
+               Record = clsString::Split(line,Separator);
+                //1009 <-> Belal Mohamed Mohamed <-> 30410201203234 <-> belalmo@22 <-> CS <-> 0.000000 <-> NULL
+
+               float gpa = (Record[6] == "NULL") ? 0.0f : stof(Record[6]);
+
+               
+               Student student(Record[0], Record[1], Record[2], Record[3], Record[4], Record[5], gpa);
+               students.push_back(student);
+           }
+
+        }
+         return students;
+    }
 public:
     Student(){}
     Student(const string &ID ,const string &FullName ,const string &NID,const string &Password ,
@@ -54,6 +76,17 @@ public:
     float getGPA(){return GPA;}
     string getFacultyName(){return FacultyName;}
 
+    vector<Student> getAllStudents() {
+           return LoadStudents();
+    }
+    bool isStudent() {
+           vector<Student> students = getAllStudents();
+
+            for(Student &student : students) {
+                if(student.getNationalID() == getNationalID() && student.getPassword() == getPassword()) return true;
+            }
+        return false;
+    }
     bool AddNewStudent(){
 
         setID(to_string(GenerateID()));

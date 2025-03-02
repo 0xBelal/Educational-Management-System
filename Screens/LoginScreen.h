@@ -14,10 +14,12 @@
 #include "../Screens/AdminScreens/AdminMainScreen.h"
 #include "../Core/SubAdmin.h"
 #include "../Screens/sAdminScreens/sAdminMainScreen.h"
+#include "../Core/Student.h"
+#include "../Screens/StudentScreens/StudentMainScreen.h"
 using namespace std;
 
 // Enum for Screen Types
-enum eScreens { eAdmin = 1, eFacultyAdmin, eStudent, eProfessor };
+enum eScreens { eAdmin = 1, eFacultyAdmin =2, eStudent=3, eProfessor=4};
 
 class LoginScreen : public Screen {
 private:
@@ -51,6 +53,22 @@ private:
         }
 
     }
+
+    static void StudentLoginScreen() {
+        system("cls");
+        Screen::DrawScreen("Student Login");
+        Student student;
+        cout<<"National ID : ";
+        student.setNationalID(clsInputValidate::ReadString());
+        cout<<"Password    : ";
+        student.setPassword(clsInputValidate::ReadPassword());
+        if(!student.isStudent()) {
+            cout<<"Student login failed...\n";
+            system("pause>0");
+            StudentLoginScreen();
+        }
+
+    }
 public:
     // Static Method to Show Login Screen
     static void show() {
@@ -68,7 +86,9 @@ public:
                   sAdminMainScreen::Show();
             break;
             case eScreens::eStudent:
-                Screen::DrawScreen("Student Login");
+               // Screen::DrawScreen("Student Login");
+                   StudentLoginScreen();
+                    StudentMainScreen::Show();
             break;
             case eScreens::eProfessor:
                 Screen::DrawScreen("Prof Login");
