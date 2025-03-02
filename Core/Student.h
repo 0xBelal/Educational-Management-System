@@ -57,7 +57,13 @@ public:
     bool AddNewStudent(){
 
         setID(to_string(GenerateID()));
-        fstream file(GenerateStudentPath(getFacultyName(),getID()),ios::out | ios::app);
+        fstream file((StudentInfo+getID()+".txt").c_str(),ios::out | ios::app);
+        fstream Courses((StudentCourses+getID()+".txt").c_str(),ios::out | ios::app);
+        fstream All_Student((AllStudent).c_str(),ios::out | ios::app);
+        if(All_Student.is_open()) {
+            All_Student<<ConvertStudentObjToRecord()<<endl;
+            All_Student.close();
+        }
         if (file.is_open()) {
             file<<ConvertStudentObjToRecord()<<endl;
             file.close();

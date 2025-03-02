@@ -1,1 +1,0 @@
-1003 <-> Amr Ahmed Mohamed  <-> 30562101203465 <-> 12345678 <-> Computer Science <-> 0.000000 <-> NULL

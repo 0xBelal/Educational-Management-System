@@ -37,15 +37,8 @@ int GenerateID() {
     return ID;
 }
 
-string GenerateStudentPath(string FacultyName, string ID) {
-    string studentPath = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\";
-    for (char &c : FacultyName) {
-        if (c == ' ') continue;
-        studentPath += c;
-    }
-    studentPath += ("\\Students\\" + (ID) + ".txt");
-
-    return studentPath;
-}
+const string StudentCourses = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses";
+const string StudentInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\S";
+const string AllStudent     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\All.txt";
 
 #endif // GLOBAL_H

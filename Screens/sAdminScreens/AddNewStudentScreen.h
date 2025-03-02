@@ -36,7 +36,7 @@ public:
         cout<<"Degree      : ";
         student.setDegree(clsInputValidate::ReadString());
         if(student.AddNewStudent()) cout<<"\nAdd successfully....\n";
-
+        else cout<<"Error\n";
 
     }
 
