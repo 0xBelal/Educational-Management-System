@@ -1,3 +1,12 @@
-CS101 <-> Programming || <-> 3 <-> 0.0 <-> CS100
-BU102 <-> Math 3 <-> 3 <-> 0.000000 <-> BU0 <-> BU100 <-> BU101
-
+HU100 <-> English <-> 2 <-> 0.000000
+BS100 <-> Mathemathematics 1 <-> 3 <-> 0.000000 <-> BS000
+BS102 <-> Electronics <-> 3 <-> 0.000000
+BS103 <-> Probability and statistics <-> 3 <-> 0.000000
+CS100 <-> Computational Thinking <-> 3 <-> 0.000000
+CS101 <-> Programming 1 <-> 3 <-> 0.000000
+CS102 <-> Programming 2 <-> 3 <-> 0.000000 <-> CS101
+CS103 <-> Discrete Math <-> 3 <-> 0.000000 <-> BS100
+IT100 <-> Logic Design <-> 3 <-> 0.000000
+DS100 <-> Operation Research <-> 3 <-> 0.000000
+BS101 <-> Mathemathematics 2 <-> 3 <-> 0.000000 <-> BS100
+HU102 <-> Ethics <-> 2 <-> 0.000000

@@ -1,112 +1,110 @@
-//
-// Created by Belal on 03-Mar-25.
-//
-
 #ifndef COURSE_H
 #define COURSE_H
 
-
-
 #include <iostream>
 #include <vector>
+#include <fstream>
 #include "Student.h"
-#include  "../Global/Global.h"
 #include "../Global/Global.h"
+
 using namespace std;
 
 class Course {
 private:
-
     string courseCode;
     string name;
     int creditHours;
     double studentMark;
+    double maxMark;
     vector<string> PrerequisitesCourses;
 
     string ConvertCourseObjToRecord() {
-
-        string line = (getCourseCode() + Separator + getName()+ Separator + to_string(getCreditHours()) +
-            Separator + to_string(getStudentMark()) );
-
+        string line = (getCourseCode() + Separator + getName() + Separator + to_string(getCreditHours()) +
+                       Separator + to_string(getStudentMark()));
         line += ConvertPrerequisiteCourseObjToRecord();
-
         return line;
     }
-    string ConvertPrerequisiteCourseObjToRecord() { // <-> CS100
-        string pre="";
-        for(string &x:PrerequisitesCourses) {
+
+    string ConvertPrerequisiteCourseObjToRecord() {
+        string pre = "";
+        for (const string &x : PrerequisitesCourses) {
             pre += Separator + x;
         }
         return pre;
     }
 
 public:
+    Course() : studentMark(0), maxMark(100) {}
 
-    Course(){}
-    Course(const string &cCode,const string &cName,const  int &cHours, const double &sMark)
-        : courseCode(cCode), name(cName), creditHours(cHours), studentMark(sMark) {
-
-        setMark(studentMark);
-
+    Course(const string &cCode, const string &cName, int cHours, double sMark, double mMark = 100)
+        : courseCode(cCode), name(cName), creditHours(cHours), studentMark(0), maxMark(mMark) {
+        setMark(sMark);
     }
 
+    // Setter methods
     void setMark(double m) {
-        if (m >= 0 && m <= 100) {
+        if (m >= 0 && m <= maxMark) {
             studentMark = m;
         } else {
-            cout << "Invalid mark! Should be between 0 and " << 100 << endl;
+            cout << "Invalid mark! Should be between 0 and " << maxMark << endl;
         }
-    }
-    void setCourseCode(const string &cCourseCode) {  courseCode = cCourseCode; }
-    void setName(const string &cName) {  name = cName; }
-    void setCreditHours(const int &cHours) { creditHours = cHours; }
-    void setStudentMark(const double &m) {
-        if (m >= 0 && m <= 100) {
-        studentMark = m;
-        } else {
-            cout << "Invalid mark! Should be between 0 and " << 100 << endl;
-        }
-    }
-    void setPrerequisiteCourse(const string &cCourse) {
-        PrerequisitesCourses.push_back(cCourse);
     }
 
-    string getCourseCode() const {  return courseCode; }
-    string getName() const {  return name; }
-    int getCreditHours() const {  return creditHours; }
-    double getStudentMark() const {  return studentMark; }
-    vector<string> getPrerequisitesCourses() const {  return PrerequisitesCourses;  }
+    void setCourseCode(const string &cCourseCode) { courseCode = cCourseCode; }
+    void setName(const string &cName) { name = cName; }
+    void setCreditHours(int cHours) { creditHours = cHours; }
+    void setStudentMark(double m) { setMark(m); } // Calls setMark for validation
+    void setMaxMark(double m) { maxMark = m; } // Set max mark dynamically
+    void addPrerequisiteCourse(const string &cCourse) { PrerequisitesCourses.push_back(cCourse); }
+
+    // Getter methods
+    string getCourseCode() const { return courseCode; }
+    string getName() const { return name; }
+    int getCreditHours() const { return creditHours; }
+    double getStudentMark() const { return studentMark; }
+    double getMaxMark() const { return maxMark; }
+    const vector<string> &getPrerequisitesCourses() const { return PrerequisitesCourses; }
 
     bool AddNewCourse() {
+        fstream file_allCourses(AllCourses.c_str(), ios::app);
+        fstream file_courseInfo((CoursesInfo + getCourseCode()).c_str(), ios::out);
 
-        fstream file_allCourses (AllCourses.c_str(),ios::app);
-        fstream file_courseInfo ((CoursesInfo + getCourseCode()).c_str() , ios::out);
+        if (!file_allCourses.is_open()) {
+            cerr << "Error: Unable to open file " << AllCourses << endl;
+            return false;
+        }
 
-        if(file_allCourses.is_open()) {
+        file_allCourses << ConvertCourseObjToRecord() << endl;
+        file_allCourses.close();
 
-            file_allCourses<<ConvertCourseObjToRecord()<<endl;
-            file_allCourses.close();
+        if (!file_courseInfo.is_open()) {
+            cerr << "Error: Unable to open file " << CoursesInfo + getCourseCode() << endl;
+            return false;
+        }
 
-            if(file_courseInfo.is_open()) {
-
-                file_courseInfo << getCourseCode()<<" " << Separator << " "<<getName()<<ConvertPrerequisiteCourseObjToRecord()<<endl;
-                file_courseInfo.close();
-
-            }
-        }else return false;
+        file_courseInfo << getCourseCode() << " " << Separator << " " << getName()
+                        << ConvertPrerequisiteCourseObjToRecord() << endl;
+        file_courseInfo.close();
 
         return true;
     }
 
-    /*void displayCourseInfo() const {
+    void displayCourseInfo() const {
         cout << "Course Code: " << courseCode << endl;
         cout << "Name: " << name << endl;
         cout << "Credit Hours: " << creditHours << endl;
         cout << "Max Mark: " << maxMark << endl;
-        cout << "Current Mark: " << mark << endl;
-        getPrerequisites(); // Show prerequisite courses
-    }*/
+        cout << "Current Mark: " << studentMark << endl;
+        cout << "Prerequisite Courses: ";
+        if (PrerequisitesCourses.empty()) {
+            cout << "None";
+        } else {
+            for (const string &course : PrerequisitesCourses) {
+                cout << course << " ";
+            }
+        }
+        cout << endl;
+    }
 };
 
-
-#endif //COURSE_H
+#endif // COURSE_H

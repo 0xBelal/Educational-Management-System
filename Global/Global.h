@@ -37,8 +37,8 @@ int GenerateID() {
     return ID;
 }
 
-const string StudentCourses = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses";
-const string StudentInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\S";
+const string StudentCourses = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\StudentsInfo\\Courses_";
+const string StudentInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\StudentsInfo\\Student_";
 const string AllStudent     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\All.txt";
 const string AllCourses     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses\\AllCourses";
 const string CoursesInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses\\";

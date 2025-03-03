@@ -36,7 +36,7 @@ private:
             for(int i=0;i<NoOfCourses;i++) {
 
                 cout<<i+1<<") Course Code : ";
-                course.setPrerequisiteCourse(clsInputValidate::ReadString());
+                course.addPrerequisiteCourse(clsInputValidate::ReadString());
 
             }
 
