@@ -21,4 +21,7 @@ sub admin add new student to path file:  “..\\DataSource\\FacultyName\\Student
 and file path  all {id , national id ,pass}
  Student { id , name, national id, faculty, GPA, }
 
+
+Course code , Name , credit hours, mark
+
  */

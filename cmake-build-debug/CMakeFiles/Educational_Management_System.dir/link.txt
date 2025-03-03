@@ -1,0 +1,3 @@
+"C:\Users\belal\AppData\Local\JetBrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Educational_Management_System.dir/objects.a
+C:\Users\belal\AppData\Local\JETBRA~1\CLION2~1.2\bin\mingw\bin\ar.exe qc CMakeFiles\Educational_Management_System.dir/objects.a @CMakeFiles\Educational_Management_System.dir\objects1.rsp
+C:\Users\belal\AppData\Local\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\Educational_Management_System.dir/objects.a -Wl,--no-whole-archive -o Educational_Management_System.exe -Wl,--out-implib,libEducational_Management_System.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Educational_Management_System.dir\linkLibs.rsp
