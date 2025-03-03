@@ -10,6 +10,7 @@
 #include "../Core/Admin.h"
 #include "../Global/Global.h"
 #include "Admin.h"
+#include "Course.h"
 
 using namespace std;
 
@@ -86,7 +87,8 @@ public:
             file.close();
 
             return true;
-        }
+    }
+
 
 };
 #endif //SUBADMIN_H

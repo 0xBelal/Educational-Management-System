@@ -13,7 +13,7 @@ using namespace std;
 
 const string Separator = " <-> ";
 const string Admin_File = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Admin.txt";
-const string ComputerScience = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\ComputerScience\\";
+//const string ComputerScience = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\ComputerScience\\";
 const string AllAdmin_File = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\AllAdmin.txt";
 
 
@@ -40,5 +40,6 @@ int GenerateID() {
 const string StudentCourses = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses";
 const string StudentInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\S";
 const string AllStudent     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\All.txt";
-const string AllCourses     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\AllCourses.txt"
+const string AllCourses     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses\\AllCourses";
+const string CoursesInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses\\";
 #endif // GLOBAL_H
