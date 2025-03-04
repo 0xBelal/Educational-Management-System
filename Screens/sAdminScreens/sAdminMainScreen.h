@@ -17,6 +17,8 @@ enum ensAdminScreens {eAddNewStudent = 1, eAddNewCourse = 2 ,esExit = 3};
 class sAdminMainScreen : public  Screen {
 private:
 
+
+
 public:
 
     static void  Show() {
@@ -27,13 +29,15 @@ public:
         cout<<"2. Add New Course"<<endl;
         cout<<"3. Exit"<<endl;
 
-        switch (short ANS = clsInputValidate::ReadShortNumberBetween(1,2)) {
+        switch (short ANS = clsInputValidate::ReadShortNumberBetween(1,3)) {
             case ensAdminScreens::eAddNewStudent:
                 //  cout<<"Add new admin screen will be here....\n";
                     AddNewStudentScreen::Show();
+                    Show();
             break;
             case ensAdminScreens::eAddNewCourse:
                 AddNewCourseScreen::Show();
+                Show();
             break;
             case ensAdminScreens::esExit:
                 return;

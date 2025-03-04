@@ -28,6 +28,7 @@ public:
             case Registeretion:
                  cout<<"Registeretion screen will be here....\n";
 
+                Show();
             break;
             case Exit:
                 return;

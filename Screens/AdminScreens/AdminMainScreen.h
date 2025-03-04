@@ -27,6 +27,7 @@ public:
             case eAddNewAdmin:
                 //  cout<<"Add new admin screen will be here....\n";
                     AddNewSubAdminScreen::Show();
+                    Show();
                 break;
             case eExit:
                 return;
