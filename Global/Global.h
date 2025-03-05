@@ -42,4 +42,5 @@ const string StudentInfo    = "E:\\Computer Science\\Projects\\Educational Manag
 const string AllStudent     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\All.txt";
 const string AllCourses     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses\\AllCourses";
 const string CoursesInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses\\";
+//const string AllStudent_File = R"(..\DataSource\Students\All.txt)";
 #endif // GLOBAL_H
