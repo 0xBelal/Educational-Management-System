@@ -10,7 +10,8 @@
 #include "Person.h"
 #include "../Global/Global.h"
 #include <fstream>
-
+#include "../Core/Course.h"
+#include <vector>
 using namespace  std;
 
 
@@ -21,6 +22,8 @@ private :
     string Degree;
     float GPA;
     bool Empty = true;
+    vector<Course> enrolledCourses;
+
     string ConvertStudentObjToRecord() {
         return (getID() + Separator + getFullName() + Separator + getNationalID() + Separator + getPassword() +
             Separator +getFacultyName() + Separator +to_string( getGPA()) + Separator + getDegree());
@@ -122,6 +125,11 @@ public:
 
         
         return true;
+    }
+
+    bool registerCourse(const Course& course) {
+        /*enrolledCourses.push_back(course);
+        cout << name << " has registered for " << course.getName() << ".\n";*/
     }
 };
 
