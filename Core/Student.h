@@ -20,7 +20,7 @@ private :
     string FacultyName;
     string Degree;
     float GPA;
-
+    bool Empty = true;
     string ConvertStudentObjToRecord() {
         return (getID() + Separator + getFullName() + Separator + getNationalID() + Separator + getPassword() +
             Separator +getFacultyName() + Separator +to_string( getGPA()) + Separator + getDegree());
@@ -51,7 +51,7 @@ private :
                float gpa = (Record[6] == "NULL") ? 0.0f : stof(Record[6]);
 
                
-               Student student(Record[0], Record[1], Record[2], Record[3], Record[4], Record[5], gpa);
+               Student student(Record[0], Record[1], Record[2], Record[3], Record[4], Record[6], gpa);
                students.push_back(student);
            }
 
@@ -59,7 +59,7 @@ private :
          return students;
     }
 public:
-    Student(){}
+    Student() : Empty(true) {}
     Student(const string &ID ,const string &FullName ,const string &NID,const string &Password ,
         const string &FacultyName,const string &Degree,const float &GPA):
     Person(ID, FullName,  Password,NID) {       //     Person(string ID, string FullName, string Password,const string& NID)
@@ -72,10 +72,12 @@ public:
     void setGPA(const float &gpa) { GPA = gpa; }
     void setFacultyName(const string &Name){ FacultyName = Name;}
 
+
     string getDegree(){return Degree;}
     float getGPA(){return GPA;}
     string getFacultyName(){return FacultyName;}
 
+    bool isEmpty(){return Empty;}
     vector<Student> getAllStudents() {
            return LoadStudents();
     }
@@ -86,6 +88,21 @@ public:
                 if(student.getNationalID() == getNationalID() && student.getPassword() == getPassword()) return true;
             }
         return false;
+    }
+    Student getIDByNationalID()  {
+
+        Student student;
+
+        vector<Student> students = getAllStudents();
+
+        for(Student & s : students) {
+            if(getNationalID() == s.getNationalID()) {
+                s.Empty = false;
+                student = s;
+                return student;
+            }
+        }
+        return student;
     }
     bool AddNewStudent(){
 

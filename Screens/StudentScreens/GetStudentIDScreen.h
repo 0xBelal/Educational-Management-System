@@ -1,0 +1,46 @@
+//
+// Created by Belal on 05-Mar-25.
+//
+
+#ifndef GETSTUDENTIDSCREEN_H
+#define GETSTUDENTIDSCREEN_H
+#include <iostream>
+#include <string>
+
+#include "../Screen.h"
+#include "E:\Computer Science\Projects\Educational Management System\Core\Student.h"
+#include "../Screen.h"
+#include "E:\Computer Science\Projects\Educational Management System\lib\clsInputValidate.h"
+using namespace std;
+class GetStudentIDScreen : public Screen {
+private:
+
+
+    static void PrintStudentInfo(Student &student)  {
+        cout<<"\n______________Student Info______________\n";
+        cout<<"Student ID : "<<student.getID()<<" , Password : "<<student.getPassword()<<endl;
+        cout<<"Name : "<<student.getFullName()<<endl;
+        cout<<"National ID : "<<student.getNationalID()<<endl;
+        cout<<"Faculty : "<<student.getFacultyName()<< " , GPA : "<<student.getGPA()<<endl;
+        cout<<"Degree : "<<student.getDegree()<<endl;
+        cout<<"________________________________________\n";
+
+    }
+
+public:
+
+    static void Show() {
+        system("cls");
+        Screen::DrawScreen("Get Student ID Screen");
+        cout<<"\n________________________________________\n";
+        cout<<"Enter Student National ID : ";
+        Student student; student.setNationalID(clsInputValidate::ReadString());
+        if((student = student.getIDByNationalID()).isEmpty()) cout<<"\nInvalid Student ID....."<<endl;
+        else PrintStudentInfo(student);
+        cout<<"\n\n________________________________________\n";
+
+        system("pause>0");
+    }
+
+};
+#endif //GETSTUDENTIDSCREEN_H
