@@ -381,10 +381,12 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: E:/Computer\ Science/
   E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsDate.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsInputValidate.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsString.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Global/Global.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/LoginScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/GetStudentIDScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsInputValidate.h
 
 
@@ -1149,3 +1151,5 @@ E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScre
 E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsInputValidate.h:
 
 E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/LoginScreen.h:
+
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/GetStudentIDScreen.h:
