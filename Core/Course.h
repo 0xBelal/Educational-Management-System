@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include "Student.h"
+//#include "Student.h"
 #include "../Global/Global.h"
 
 using namespace std;
