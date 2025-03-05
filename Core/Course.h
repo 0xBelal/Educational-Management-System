@@ -20,7 +20,7 @@ private:
 
     string ConvertCourseObjToRecord() {
         string line = (getCourseCode() + Separator + getName() + Separator + to_string(getCreditHours()) +
-                       Separator + to_string(getStudentMark()));
+                       Separator + to_string(getMaxMark()));
         line += ConvertPrerequisiteCourseObjToRecord();
         return line;
     }
@@ -31,6 +31,35 @@ private:
             pre += Separator + x;
         }
         return pre;
+    }
+
+    static vector<Course> LoadAllCourses()  {
+        fstream courseFile(AllCourses.c_str(),ios::in);
+        string line;
+        vector<string> vCourse;
+        vector<Course> vAllCourses;
+        Course course;
+        if (courseFile.is_open()) {
+
+            while(getline(courseFile,line)) {
+                // BS100 <-> Mathemathematics 1 <-> 3 <-> 100 <-> BS000
+
+                vCourse = clsString::Split(line,Separator);
+                course.setCourseCode(vCourse[0]);
+                course.setName(vCourse[1]);
+                course.setCreditHours(stoi(vCourse[2]));
+                course.setMaxMark(stoi(vCourse[3]));
+                for(int i=4;i<vCourse.size();i++) {
+                    course.addPrerequisiteCourse(vCourse[i]);
+                }
+                vAllCourses.push_back(course);
+            }
+            courseFile.close();
+
+        }else {
+            cout<<"Course file not found"<<endl;
+        }
+        return vAllCourses;
     }
 
 public:
@@ -88,6 +117,8 @@ public:
 
         return true;
     }
+
+    static vector<Course> GetAllCourses(){ return LoadAllCourses();}
 
     void displayCourseInfo() const {
         cout << "Course Code: " << courseCode << endl;

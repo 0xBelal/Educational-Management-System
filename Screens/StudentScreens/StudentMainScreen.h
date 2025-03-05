@@ -10,6 +10,7 @@
 #include "../Screen.h"
 #include "E:/Computer Science/Projects/Educational Management System/lib/clsInputValidate.h"
 #include "E:\Computer Science\Projects\Educational Management System\Screens\StudentScreens\GetStudentIDScreen.h"
+#include "RegisteretionScreen.h"
 using namespace  std;
 enum eStudentScreens {Registeretion = 1, GetID = 2, Exit = 3};
 class StudentMainScreen : public  Screen {
@@ -27,7 +28,8 @@ public:
 
         switch (short ANS = clsInputValidate::ReadShortNumberBetween(1,3)) {
             case Registeretion:
-                 cout<<"Registeretion screen will be here....\n";
+                //cout<<"Registeretion screen will be here....\n";
+                    RegisteretionScreen::Show();
                 Show();
             break;
             case GetID:

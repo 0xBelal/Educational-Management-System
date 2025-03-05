@@ -374,6 +374,7 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: E:/Computer\ Science/
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/AddNewSubAdminScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/AdminMainScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegisteretionScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/StudentMainScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AddNewCourseScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AddNewStudentScreen.h \
@@ -685,6 +686,8 @@ C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h:
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/shared_ptr.h:
+
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegisteretionScreen.h:
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/shared_ptr_atomic.h:
 
