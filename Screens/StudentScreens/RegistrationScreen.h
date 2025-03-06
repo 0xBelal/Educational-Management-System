@@ -16,28 +16,33 @@
 class RegistrationScreen : public Screen {
 private:
     static void PrintHeader() {
-        std::cout << std::setw(10) << "cCode"
-                  << " | " << std::setw(15) << "Course Name"
-                  << " | " << std::setw(10) << "Credit H"
+        std::cout << std::left << std::setw(11) << "Course Code"
+                  << " | " << std::setw(26) << "Course Name"
+                  << " | " << std::setw(10) << "Credit Hour"
                   << " | " << std::setw(10) << "Max Mark"
-                  << " | " << std::setw(20) << "Prerequisites"
+                  << " | " << std::setw(30) << "Prerequisites"
                   << std::endl;
+        std::cout << std::string(81, '_') << std::endl;
     }
 
     static void PrintCourse(const Course &course) {
-        std::cout << std::setw(10) << course.getCourseCode()
-                  << " | " << std::setw(15) << course.getName()
+        std::cout << std::left << std::setw(11) << course.getCourseCode()
+                  << " | " << std::setw(26) << course.getName()
                   << " | " << std::setw(10) << course.getCreditHours()
-                  << " | " << std::setw(10) << course.getMaxMark()
+                  << " | " << std::setw(10)  << course.getMaxMark()
                   << " | ";
 
-        std::string prerequisites;
-        for (const std::string &x : course.getPrerequisitesCourses()) {
-            prerequisites += x + " ";
+        std::vector<std::string> prerequisites = course.getPrerequisitesCourses();
+        if (!prerequisites.empty()) {
+            for (size_t i = 0; i < prerequisites.size(); i++) {
+                std::cout << prerequisites[i];
+                if (i != prerequisites.size() - 1) std::cout << " ";
+            }
         }
 
-        std::cout << std::setw(20) << prerequisites << std::endl;
+        std::cout << std::endl;
     }
+
 
     static void PrintAllCourses() {
         std::vector<Course> vAllCourses = Course::GetAllCourses();
