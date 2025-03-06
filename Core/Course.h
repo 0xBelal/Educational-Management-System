@@ -38,13 +38,14 @@ private:
         string line;
         vector<string> vCourse;
         vector<Course> vAllCourses;
-        Course course;
+
         if (courseFile.is_open()) {
 
             while(getline(courseFile,line)) {
                 // BS100 <-> Mathemathematics 1 <-> 3 <-> 100 <-> BS000
 
                 vCourse = clsString::Split(line,Separator);
+                Course course;
                 course.setCourseCode(vCourse[0]);
                 course.setName(vCourse[1]);
                 course.setCreditHours(stoi(vCourse[2]));
@@ -53,6 +54,7 @@ private:
                     course.addPrerequisiteCourse(vCourse[i]);
                 }
                 vAllCourses.push_back(course);
+
             }
             courseFile.close();
 
