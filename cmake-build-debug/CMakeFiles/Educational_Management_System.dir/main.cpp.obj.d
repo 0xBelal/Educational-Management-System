@@ -397,6 +397,6 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: \
  E:\Computer\ Science\Projects\Educational\ Management\ System\Screens\StudentScreens\GetStudentIDScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
  E:\Computer\ Science\Projects\Educational\ Management\ System\Core\Student.h \
- E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegisteretionScreen.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistrationScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Course.h \
  E:\Computer\ Science\Projects\Educational\ Management\ System\Global/Global.h
