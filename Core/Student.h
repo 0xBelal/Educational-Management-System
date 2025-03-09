@@ -12,6 +12,9 @@
 #include <fstream>
 #include "../Core/Course.h"
 #include <vector>
+#include <string>
+#include <set>
+
 using namespace  std;
 
 
@@ -46,6 +49,7 @@ private :
         file.open(AllStudent.c_str(),ios::in);
         if(file.is_open()) {
             string line;
+            Student student;
            while(getline(file,line)) {
 
                Record = clsString::Split(line,Separator);
@@ -54,12 +58,47 @@ private :
                float gpa = (Record[6] == "NULL") ? 0.0f : stof(Record[6]);
 
                
-               Student student(Record[0], Record[1], Record[2], Record[3], Record[4], Record[6], gpa);
+               student.setID(Record[0]);
+               student.setFullName(Record[1]);
+               student.setNationalID( Record[2]);
+               student.setPassword( Record[3]);
+               student.setFacultyName( Record[4]);
+               student.setDegree( Record[6]);
+               student.setGPA( gpa);
                students.push_back(student);
+
+               Record.clear();
+
            }
 
         }
          return students;
+    }
+    vector<Course> LoadStudentCourses() {
+        vector<Course> courses;
+        vector<string> vCourse;
+        fstream file;
+        file.open((StudentCourses+getID()).c_str(),ios::in);
+        if(file.is_open()) {
+            string line;
+            while(getline(file,line)) {
+                // CS102 <-> Programming 2 <-> 3 <-> 100 <-> CS101
+
+                Course course;
+                vCourse = clsString::Split(line,Separator);
+                course.setCourseCode(vCourse[0]);
+                course.setName(vCourse[1]);
+                course.setCreditHours(stoi(vCourse[2]));
+                course.setStudentMark(stod(vCourse[3]));
+                for(int i=4;i<vCourse.size();i++) {
+                    course.addPrerequisiteCourse(vCourse[i]);
+                }
+
+                courses.push_back(course);
+            }
+            file.close();
+        }
+        return courses;
     }
 public:
     Student() : Empty(true) {}
@@ -94,18 +133,17 @@ public:
     }
     Student getIDByNationalID()  {
 
-        Student student;
 
         vector<Student> students = getAllStudents();
 
         for(Student & s : students) {
             if(getNationalID() == s.getNationalID()) {
                 s.Empty = false;
-                student = s;
-                return student;
+
+                return s;
             }
         }
-        return student;
+        return Student();
     }
     bool AddNewStudent(){
 
@@ -127,9 +165,29 @@ public:
         return true;
     }
 
-    bool registerCourse(const Course& course) {
-        /*enrolledCourses.push_back(course);
-        cout << name << " has registered for " << course.getName() << ".\n";*/
+    vector<Course> getEnrolledCourses() {
+        return enrolledCourses;
+    }
+
+    bool registerCourse(const string& code) {
+        Course course = Course::getCourseByCode(code);
+
+        vector<Course> enrolledCourses = LoadStudentCourses();
+
+        unordered_set<string> enrolledSet;
+        for (const Course& s : enrolledCourses) {
+            enrolledSet.insert(s.getCourseCode());
+        }
+
+        for (const string& subj : course.getPrerequisitesCourses()) {
+            if (enrolledSet.find(subj) == enrolledSet.end()) {
+               return false;
+            }
+        }
+
+        // addCourseToStudent(code);
+
+        return true;
     }
 };
 

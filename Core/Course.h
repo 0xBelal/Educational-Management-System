@@ -6,7 +6,7 @@
 #include <fstream>
 //#include "Student.h"
 #include "../Global/Global.h"
-
+#include <string>
 using namespace std;
 
 class Course {
@@ -49,7 +49,7 @@ private:
                 course.setCourseCode(vCourse[0]);
                 course.setName(vCourse[1]);
                 course.setCreditHours(stoi(vCourse[2]));
-                course.setMaxMark(stoi(vCourse[3]));
+                course.setMaxMark(stod(vCourse[3]));
                 for(int i=4;i<vCourse.size();i++) {
                     course.addPrerequisiteCourse(vCourse[i]);
                 }
@@ -94,7 +94,7 @@ public:
     int getCreditHours() const { return creditHours; }
     double getStudentMark() const { return studentMark; }
     double getMaxMark() const { return maxMark; }
-    const vector<string> &getPrerequisitesCourses() const { return PrerequisitesCourses; }
+    vector<string> getPrerequisitesCourses() const { return PrerequisitesCourses; }
 
     bool AddNewCourse() {
         fstream file_allCourses(AllCourses.c_str(), ios::app);
@@ -122,6 +122,40 @@ public:
 
     static vector<Course> GetAllCourses(){ return LoadAllCourses();}
 
+    static Course getCourseByCode(const string &code ) {
+
+
+            fstream courseFile((CoursesInfo+code).c_str(),ios::in);
+            string line;
+            vector<string> vCourses;
+            Course course;
+
+            if (courseFile.is_open()) {
+
+                while(getline(courseFile,line)) {
+                    // CS102  <->  Programming 2 <-> CS101
+
+
+                    vCourses = clsString::Split(line,Separator);
+
+                    course.setCourseCode(vCourses[0]);
+                    course.setName(vCourses[1]);
+
+                    for(int i=2;i<vCourses.size();i++) {
+                        course.addPrerequisiteCourse(vCourses[i]);
+                    }
+
+                }
+
+                courseFile.close();
+
+            }else {
+                cout<<"Course file not found"<<endl;
+            }
+
+            return course;
+
+    }
     void displayCourseInfo() const {
         cout << "Course Code: " << courseCode << endl;
         cout << "Name: " << name << endl;
