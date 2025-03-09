@@ -9,6 +9,8 @@
 #include <iostream>
 
 
+
+
 using namespace std;
 
 const string Separator = " <-> ";
@@ -43,4 +45,5 @@ const string AllStudent     = "E:\\Computer Science\\Projects\\Educational Manag
 const string AllCourses     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses\\AllCourses";
 const string CoursesInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses\\";
 //const string AllStudent_File = R"(..\DataSource\Students\All.txt)";
+
 #endif // GLOBAL_H
