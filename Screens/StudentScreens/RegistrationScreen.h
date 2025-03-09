@@ -12,6 +12,7 @@
 
 #include "../Screen.h"
 #include "../../Core/Course.h"
+#include "../../Global/LoginUser.h"
 
 class RegistrationScreen : public Screen {
 private:
@@ -58,6 +59,12 @@ public:
     static void Show() {
         Screen::DrawScreen("Registration Screen");
         PrintAllCourses();
+        string code;
+        cout<<"\nEnter a code : ";  cin>>code;
+
+        if(LoginStudent.registerCourse(code)) cout<<"Yes"<<endl;
+        else cout<<"No"<<endl;
+
         system("pause>0");
     }
 };

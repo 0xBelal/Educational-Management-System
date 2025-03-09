@@ -15,6 +15,7 @@
 #include "../Core/SubAdmin.h"
 #include "../Screens/sAdminScreens/sAdminMainScreen.h"
 #include "../Core/Student.h"
+#include "../Global/LoginUser.h"
 #include "../Screens/StudentScreens/StudentMainScreen.h"
 using namespace std;
 
@@ -69,6 +70,7 @@ private:
             system("pause>0");
             StudentLoginScreen();
         }
+        LoginStudent = student;
 
     }
 
