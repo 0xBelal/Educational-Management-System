@@ -33,6 +33,7 @@ private:
         return pre;
     }
 
+
     static vector<Course> LoadAllCourses()  {
         fstream courseFile(AllCourses.c_str(),ios::in);
         string line;
@@ -72,6 +73,13 @@ public:
         setMark(sMark);
     }
 
+    string ConvertToStudentCourseObjToRecord() {
+        string line = "";
+        line = (getCourseCode() + Separator + getName() + Separator + to_string(getCreditHours()) +
+                        Separator + to_string(getStudentMark()));
+        line += ConvertPrerequisiteCourseObjToRecord();
+        return line;
+    }
     // Setter methods
     void setMark(double m) {
         if (m >= 0 && m <= maxMark) {
@@ -127,31 +135,14 @@ public:
 
             fstream courseFile((CoursesInfo+code).c_str(),ios::in);
             string line;
-            vector<string> vCourses;
+            vector<Course> allCourses = GetAllCourses();
+
             Course course;
 
-            if (courseFile.is_open()) {
-
-                while(getline(courseFile,line)) {
-                    // CS102  <->  Programming 2 <-> CS101
-
-
-                    vCourses = clsString::Split(line,Separator);
-
-                    course.setCourseCode(vCourses[0]);
-                    course.setName(vCourses[1]);
-
-                    for(int i=2;i<vCourses.size();i++) {
-                        course.addPrerequisiteCourse(vCourses[i]);
-                    }
-
-                }
-
-                courseFile.close();
-
-            }else {
-                cout<<"Course file not found"<<endl;
+            for(Course & c : allCourses) {
+                if(c.getCourseCode() == code) return c;
             }
+
 
             return course;
 

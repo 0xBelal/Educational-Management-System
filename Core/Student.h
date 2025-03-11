@@ -78,11 +78,11 @@ private :
         vector<Course> courses;
         vector<string> vCourse;
         fstream file;
-        file.open((StudentCourses+getID()).c_str(),ios::in);
+        file.open((StudentCourses+getID()+".txt").c_str(),ios::in);
         if(file.is_open()) {
             string line;
             while(getline(file,line)) {
-                // CS102 <-> Programming 2 <-> 3 <-> 100 <-> CS101
+               // BS000 <-> Mathemathematics 0 <-> 0 <-> 0.000000
 
                 Course course;
                 vCourse = clsString::Split(line,Separator);
@@ -127,7 +127,16 @@ public:
            vector<Student> students = getAllStudents();
 
             for(Student &student : students) {
-                if(student.getNationalID() == getNationalID() && student.getPassword() == getPassword()) return true;
+                if(student.getNationalID() == getNationalID() && student.getPassword() == getPassword()) {
+                    this->setID(student.getID());
+                    this->setFullName(student.getFullName());
+                    //this->setNationalID(student.getNationalID());
+                    this->setFacultyName(student.getFacultyName());
+                    this->setDegree(student.getDegree());
+                    this->setGPA(student.getGPA());
+                   // this->setPassword(student.getPassword());
+                    return true;
+                }
             }
         return false;
     }
@@ -172,7 +181,7 @@ public:
     bool registerCourse(const string& code) {
         Course course = Course::getCourseByCode(code);
 
-        vector<Course> enrolledCourses = LoadStudentCourses();
+        vector<Course> enrolledCourses = this->LoadStudentCourses();
 
         unordered_set<string> enrolledSet;
         for (const Course& s : enrolledCourses) {
@@ -180,13 +189,22 @@ public:
         }
 
         for (const string& subj : course.getPrerequisitesCourses()) {
+
             if (enrolledSet.find(subj) == enrolledSet.end()) {
                return false;
             }
         }
 
-        // addCourseToStudent(code);
+        return addCourseToStudent(course);
 
+
+    }
+    bool addCourseToStudent(Course & addedCourse) {
+
+        fstream courses_file((StudentCourses+getID()+".txt").c_str(), ios::app);
+        if(courses_file.is_open()) {
+            courses_file<<addedCourse.ConvertToStudentCourseObjToRecord()<<endl;
+        }else return false;
         return true;
     }
 };
