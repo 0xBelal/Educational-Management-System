@@ -62,8 +62,8 @@ public:
         string code;
         cout<<"\nEnter a code : ";  cin>>code;
 
-        if(LoginStudent.registerCourse(code)) cout<<"Yes"<<endl;
-        else cout<<"No"<<endl;
+        if(LoginStudent.registerCourse(code)) cout<<"successfully registration...."<<endl;
+        else cout<<"error in registration....."<<endl;
 
         system("pause>0");
     }

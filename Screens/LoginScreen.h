@@ -60,17 +60,17 @@ private:
     static void StudentLoginScreen() {
         system("cls");
         Screen::DrawScreen("Student Login");
-        Student student;
+
         cout<<"National ID : ";
-        student.setNationalID(clsInputValidate::ReadString());
+        LoginStudent.setNationalID(clsInputValidate::ReadString());
         cout<<"Password    : ";
-        student.setPassword(clsInputValidate::ReadPassword());
-        if(!student.isStudent()) {
+        LoginStudent.setPassword(clsInputValidate::ReadPassword());
+        if(!LoginStudent.isStudent()) {
             cout<<"Student login failed...\n";
             system("pause>0");
             StudentLoginScreen();
         }
-        LoginStudent = student;
+        
 
     }
 
