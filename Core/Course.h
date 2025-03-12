@@ -73,6 +73,13 @@ public:
         setMark(sMark);
     }
 
+    bool operator==(const Course& other) const {
+        return courseCode == other.courseCode;
+    }
+    bool operator==(const string& other) const {
+        return courseCode == other;
+    }
+
     string ConvertToStudentCourseObjToRecord() {
         string line = "";
         line = (getCourseCode() + Separator + getName() + Separator + to_string(getCreditHours()) +
@@ -138,7 +145,7 @@ public:
             vector<Course> allCourses = GetAllCourses();
 
             Course course;
-
+            course.setCourseCode(code);
             for(Course & c : allCourses) {
                 if(c.getCourseCode() == code) return c;
             }
@@ -147,6 +154,14 @@ public:
             return course;
 
     }
+    static bool isCourse(const string &code) {
+        vector<Course> vAllCourses = GetAllCourses();
+
+        return any_of(vAllCourses.begin(), vAllCourses.end(),
+                      [&code](const Course &c) { return c.getCourseCode() == code; });
+       // system("pause>0");
+    }
+
     void displayCourseInfo() const {
         cout << "Course Code: " << courseCode << endl;
         cout << "Name: " << name << endl;
