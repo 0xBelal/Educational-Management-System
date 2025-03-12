@@ -46,7 +46,7 @@ private :
         vector<Student> students;
         vector<string> Record;
         ifstream file;
-        file.open(AllStudent.c_str(),ios::in);
+        file.open((AllStudent).c_str(),ios::in);
         if(file.is_open()) {
             string line;
             Student student;
@@ -175,11 +175,14 @@ public:
     }
 
     vector<Course> getEnrolledCourses() {
-        return enrolledCourses;
+        return (enrolledCourses = LoadStudentCourses());
     }
 
     bool registerCourse(const string& code) {
+
         Course course = Course::getCourseByCode(code);
+
+
 
         vector<Course> enrolledCourses = this->LoadStudentCourses();
 
