@@ -47,11 +47,14 @@ private:
 
     static void PrintAllCourses() {
         std::vector<Course> vAllCourses = Course::GetAllCourses();
+        std::vector<Course> vEnrolledCourses = LoginStudent.getEnrolledCourses();
 
         std::cout << "\n\n";
         PrintHeader();
         for (Course &x : vAllCourses) {
-            PrintCourse(x);
+            auto it = find(vEnrolledCourses.begin(),vEnrolledCourses.end(),x);
+            if(it == vEnrolledCourses.end())
+                PrintCourse(x);
         }
     }
 
@@ -61,10 +64,17 @@ public:
         PrintAllCourses();
         string code;
         cout<<"\nEnter a code : ";  cin>>code;
+        if(!Course::isCourse(code)) {
+            cout<<"Invalid course code ... ";
+            return ;
+        }else {
+            std::vector<Course> vEnrolledCourses = LoginStudent.getEnrolledCourses();
 
-        if(LoginStudent.registerCourse(code)) cout<<"successfully registration...."<<endl;
-        else cout<<"error in registration....."<<endl;
-
+            if(find(vEnrolledCourses.begin(),vEnrolledCourses.end(),code) == vEnrolledCourses.end()) {
+                if(LoginStudent.registerCourse(code)) cout<<"successfully registration...."<<endl;
+            }
+            else cout<<"error in registration....."<<endl;
+        }
         system("pause>0");
     }
 };
