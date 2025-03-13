@@ -8,8 +8,8 @@
 
 #include <iostream>
 #include "../Screen.h"
-#include "E:/Computer Science/Projects/Educational Management System/Core/Student.h"
-#include "E:/Computer Science/Projects/Educational Management System/lib/clsInputValidate.h"
+#include "../../Core/Student.h"
+#include "../../lib/clsInputValidate.h"
 
 using namespace std;
 class AddNewStudentScreen : public Screen {

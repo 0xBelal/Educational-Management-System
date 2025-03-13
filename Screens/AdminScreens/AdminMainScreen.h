@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include "../Screen.h"
-#include "E:/Computer Science/Projects/Educational Management System/lib/clsInputValidate.h"
+#include "../../lib/clsInputValidate.h"
 #include "AddNewSubAdminScreen.h"
 using namespace  std;
 enum eAdminScreens {eAddNewAdmin = 1, eExit = 2};

@@ -8,9 +8,9 @@
 #include <string>
 
 #include "../Screen.h"
-#include "E:\Computer Science\Projects\Educational Management System\Core\Student.h"
+#include "../../Core/Student.h"
 #include "../Screen.h"
-#include "E:\Computer Science\Projects\Educational Management System\lib\clsInputValidate.h"
+#include "../../lib/clsInputValidate.h"
 using namespace std;
 class GetStudentIDScreen : public Screen {
 private:

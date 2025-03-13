@@ -7,16 +7,13 @@
 
 #include <fstream>
 #include <iostream>
-
+#include <filesystem>
 
 
 
 using namespace std;
+namespace fs = std::filesystem;
 
-const string Separator = " <-> ";
-const string Admin_File = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Admin.txt";
-//const string ComputerScience = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\ComputerScience\\";
-const string AllAdmin_File = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\AllAdmin.txt";
 
 
 int GenerateID() {
@@ -39,11 +36,16 @@ int GenerateID() {
     return ID;
 }
 
-const string StudentCourses = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\StudentsInfo\\Courses_";
-const string StudentInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\StudentsInfo\\Student_";
-const string AllStudent     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\All.txt";
-const string AllCourses     = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses\\AllCourses";
-const string CoursesInfo    = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\Students\\Details\\Courses\\";
+const string Separator = " <-> ";
+const string Admin_File = R"(..\DataSource\Admin.txt)";
+//const string ComputerScience = "E:\\Computer Science\\Projects\\Educational Management System\\DataSource\\ComputerScience\\";
+const string AllAdmin_File = R"(..\DataSource\AllAdmin.txt)";
+
+const string StudentCourses = R"(..\DataSource\Students\Details\StudentsInfo\Courses_)";
+const string StudentInfo    = R"(..\DataSource\Students\Details\StudentsInfo\Student_)";
+const string AllStudent     =  R"(..\DataSource\Students\All.txt)";
+const string AllCourses     = R"(..\DataSource\Students\Details\Courses\AllCourses)";
+const string CoursesInfo    = R"(..\DataSource\Students\Details\Courses\)";
 //const string AllStudent_File = R"(..\DataSource\Students\All.txt)";
 
 #endif // GLOBAL_H

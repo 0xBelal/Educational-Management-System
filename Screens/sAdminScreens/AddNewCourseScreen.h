@@ -7,9 +7,9 @@
 
 #include <iostream>
 #include <string>
-#include "E:\Computer Science\Projects\Educational Management System\Screens\Screen.h"
-#include "E:\\Computer Science\\Projects\\Educational Management System\\Core\\Course.h"
-#include "E:\Computer Science\Projects\Educational Management System\lib\clsInputValidate.h"
+#include "..\..\Screens\Screen.h"
+#include "..\..\Core\Course.h"
+#include "..\..\lib\clsInputValidate.h"
 using namespace std;
 
 class AddNewCourseScreen : public Screen {

@@ -9,7 +9,7 @@
 
 #include "AddNewCourseScreen.h"
 #include "../Screen.h"
-#include "E:/Computer Science/Projects/Educational Management System/lib/clsInputValidate.h"
+#include "../../lib/clsInputValidate.h"
 #include "AddNewStudentScreen.h"
 #include "AddNewCourseScreen.h"
 using namespace  std;

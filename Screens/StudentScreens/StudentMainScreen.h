@@ -8,8 +8,8 @@
 
 #include <iostream>
 #include "../Screen.h"
-#include "E:/Computer Science/Projects/Educational Management System/lib/clsInputValidate.h"
-#include "E:\Computer Science\Projects\Educational Management System\Screens\StudentScreens\GetStudentIDScreen.h"
+#include "../../lib/clsInputValidate.h"
+#include "../../Screens/StudentScreens/GetStudentIDScreen.h"
 #include "RegistrationScreen.h"
 using namespace  std;
 enum eStudentScreens {Registeretion = 1, GetID = 2, Exit = 3};

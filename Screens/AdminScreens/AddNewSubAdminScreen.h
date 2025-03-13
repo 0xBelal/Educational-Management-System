@@ -7,8 +7,8 @@
 
 #include <iostream>
 #include "../Screen.h"
-#include "E:/Computer Science/Projects/Educational Management System/Core/SubAdmin.h"
-#include "E:/Computer Science/Projects/Educational Management System/lib/clsInputValidate.h"
+#include "../../Core/SubAdmin.h"
+#include "../../lib/clsInputValidate.h"
 
 using namespace std;
 class AddNewSubAdminScreen : public Screen {
