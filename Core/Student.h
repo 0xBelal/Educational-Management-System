@@ -42,7 +42,7 @@ private :
         this->setDegree(student.getDegree());
 
     }
-    vector<Student> LoadStudents() {
+    static vector<Student> LoadStudents() {
         vector<Student> students;
         vector<string> Record;
         ifstream file;
@@ -115,14 +115,17 @@ public:
     void setFacultyName(const string &Name){ FacultyName = Name;}
 
 
-    string getDegree(){return Degree;}
-    float getGPA(){return GPA;}
-    string getFacultyName(){return FacultyName;}
+    string getDegree() const { return Degree;}
+    float getGPA() const {return GPA;}
+    string getFacultyName()const {return FacultyName;}
 
-    bool isEmpty(){return Empty;}
-    vector<Student> getAllStudents() {
-           return LoadStudents();
+    static vector<Student> getAllStudents() {
+        return LoadStudents();
     }
+    bool isEmpty(){return Empty;}
+
+
+
     bool isStudent() {
            vector<Student> students = getAllStudents();
 
