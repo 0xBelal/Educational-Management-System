@@ -375,21 +375,22 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: E:/Computer\ Science/
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/AddNewSubAdminScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/AdminMainScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/GetStudentIDScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistrationScreen.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistredCoursesScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/StudentMainScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AddNewCourseScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AddNewStudentScreen.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AllStudentsScreen.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/SettingStudentMarksScreen.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentsScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/sAdminMainScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsDate.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsInputValidate.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsString.h \
-  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Global/Global.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/LoginScreen.h \
-  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
-  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
-  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/GetStudentIDScreen.h \
-  E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsInputValidate.h
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h
 
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctgmath:
@@ -652,6 +653,8 @@ C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ranges_uninitialized.h:
 
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistredCoursesScreen.h:
+
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h:
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h:
@@ -798,6 +801,8 @@ C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator_args.h:
 
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AllStudentsScreen.h:
+
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h:
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/valarray_array.h:
@@ -869,6 +874,8 @@ C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/x86_64-w64-ming
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstddef:
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdint:
+
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/SettingStudentMarksScreen.h:
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/x86_64-w64-mingw32/include/time.h:
 
@@ -1150,12 +1157,14 @@ E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScree
 
 E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h:
 
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/GetStudentIDScreen.h:
+
 E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistrationScreen.h:
 
 E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AddNewStudentScreen.h:
 
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentsScreen.h:
+
 E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsInputValidate.h:
 
 E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/LoginScreen.h:
-
-E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/GetStudentIDScreen.h:

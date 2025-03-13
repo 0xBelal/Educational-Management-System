@@ -23,4 +23,8 @@ add_executable(Educational_Management_System main.cpp
         Screens/sAdminScreens/AddNewCourseScreen.h
         Screens/StudentScreens/GetStudentIDScreen.h
         Screens/StudentScreens/RegistrationScreen.h
-        Global/LoginUser.h)
+        Global/LoginUser.h
+        Screens/StudentScreens/RegistredCoursesScreen.h
+        Screens/sAdminScreens/StudentsScreen.h
+        Screens/sAdminScreens/SettingStudentMarksScreen.h
+        Screens/sAdminScreens/AllStudentsScreen.h)
