@@ -395,16 +395,18 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentsScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/SettingStudentMarksScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AllStudentsScreen.h \
- E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Global/LoginUser.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
- E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/StudentMainScreen.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistredCoursesScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Course.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Global/LoginUser.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Global/LoginUser.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/StudentMainScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsInputValidate.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/GetStudentIDScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistrationScreen.h \
- E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Course.h \
- E:/Computer\ Science/Projects/Educational\ Management\ System/Global/LoginUser.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistredCoursesScreen.h \
  E:\Computer\ Science\Projects\Educational\ Management\ System\Global/Global.h
