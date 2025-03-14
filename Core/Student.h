@@ -40,7 +40,7 @@ private :
         this->setFacultyName(student.getFacultyName());
         this->setGPA(student.getGPA());
         this->setDegree(student.getDegree());
-
+        this->Empty = student.Empty;
     }
     static vector<Student> LoadStudents() {
         vector<Student> students;
@@ -152,6 +152,20 @@ public:
             if(getNationalID() == s.getNationalID()) {
                 s.Empty = false;
 
+                return s;
+            }
+        }
+        return Student();
+    }
+    Student getStudentByID()  {
+
+
+        vector<Student> students = getAllStudents();
+
+        for(Student & s : students) {
+            if(getID() == s.getID()) {
+                s.Empty = false;
+                this->Assigin(s);
                 return s;
             }
         }
