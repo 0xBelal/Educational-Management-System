@@ -9,6 +9,8 @@
 
 #include "AllStudentsScreen.h"
 #include "../Screen.h"
+#include "../../Global/LoginUser.h"
+#include "../../Screens/StudentScreens/RegistredCoursesScreen.h"
 using namespace   std;
 
 class SettingStudentMarksScreen: public Screen {
@@ -19,6 +21,13 @@ private:
 
 
         cout<<"Student Information:"<<endl;
+        std::cout << std::string(50, '_') << std::endl;
+        cout<<"ID   : "<<student.getID()<<"   National ID : "<<student.getNationalID()<<endl;
+        cout<<"Name : "<<student.getFullName()<<endl;
+        cout<<"Faculty : "<< student.getFacultyName()<<" , GPA : "<< student.getGPA()<<endl;
+        cout<<"Degree  : "<< student.getDegree()<<endl;
+        std::cout << std::string(50, '_') << std::endl;
+
     }
 
 public:
@@ -42,11 +51,12 @@ static void Show() {
             cout<<"Invalid ID!"<<endl;
         }else break;
     }while (true);
-
+            system("cls");
+            //LoginStudent = student;
             PrintStudentInfo(student);
+           // RegistredCoursesScreen::Show();
 
-
-     //system("pause>0");
+     system("pause>0");
     }
 
 
