@@ -20,19 +20,27 @@ private:
 
     enum ScreenOptions {eSettignMarks = 1, eStudentReport = 2,eExist=3};
 
-    static void ReadScreenOptions() {
+    static int ReadScreenOptions() {
 
 
         cout<<"1. Setting Student Marks"<<endl;
         cout<<"2. Student Report"<<endl;
         cout<<"3. Exist"<<endl;
 
-        int ANS = clsInputValidate::ReadIntNumberBetween(1,3);
+        return clsInputValidate::ReadIntNumberBetween(1,3);
+    }
+public:
+    static void Show() {
+        system("cls");
+        Screen::DrawScreen("Students Manage Screen");
 
-        switch (ANS) {
+        cout<<"\n\n";
+
+
+        switch (ReadScreenOptions()) {
             case StudentsScreen::eSettignMarks:
-             //   cout<<"Student Marks Set Successfully"<<endl;
-                 SettingStudentMarksScreen::Show();
+                //   cout<<"Student Marks Set Successfully"<<endl;
+                    SettingStudentMarksScreen::Show();
             break;
             case StudentsScreen::eStudentReport:
                 cout<<"Student Report Set Successfully"<<endl;
@@ -43,15 +51,7 @@ private:
                 cout<<"Invalid Input"<<endl;
             break;
         }
-    }
-public:
-    static void Show() {
-        system("cls");
-        Screen::DrawScreen("Students Manage Screen");
-
-        cout<<"\n\n";
-
-        ReadScreenOptions();
+        Show();
         system("pause>0");
     }
 

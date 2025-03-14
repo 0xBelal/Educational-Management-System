@@ -60,7 +60,7 @@ private:
         }
 
         std::cout << std::string(70, '_') << std::endl;
-        cout<<"Total Courses: "<<TotalCourses<<"           Total Hours: "<<TotalHoures<<endl;
+        cout<<"Total Courses: "<<TotalCourses<<"             Total Hours: "<<TotalHoures<<endl;
         std::cout << std::string(70, '_') << std::endl;
 
 
