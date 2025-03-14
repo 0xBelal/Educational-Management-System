@@ -54,6 +54,8 @@ static void Show() {
             system("cls");
             //LoginStudent = student;
             PrintStudentInfo(student);
+
+             PrintRegistredCourses(student);
            // RegistredCoursesScreen::Show();
 
      system("pause>0");
