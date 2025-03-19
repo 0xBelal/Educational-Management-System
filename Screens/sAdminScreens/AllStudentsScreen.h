@@ -19,15 +19,16 @@ private:
 
     static void PrintHeader() {
         cout<<endl;
+        std::cout << std::string(113, '_') << std::endl;
         cout<<left<<setw(10)<<"ID"
         <<" | "
         << setw(30) <<"Name" <<" | "
-        <<setw(13)<<"National ID"<<" | "
+        <<setw(14)<<"National ID"<<" | "
         <<setw(15)<<"Password"<<" | "
-        <<setw(15)<<"Faculty"<<" | "
+        <<setw(16)<<"Faculty"<<" | "
         <<setw(4)<<"GPA"<<" | "
         <<setw(6)<<"Degree"<<endl;
-        std::cout << std::string(85, '_') << std::endl;
+        std::cout << std::string(113, '_') << std::endl;
 
     }
 
@@ -36,9 +37,9 @@ private:
         cout<<left<<setw(10)<<student.getID()
        <<" | "
        << setw(30) <<student.getFullName()<<" | "
-       <<setw(13)<<student.getNationalID()<<" | "
+       <<setw(14)<<student.getNationalID()<<" | "
        <<setw(15)<<student.getPassword()<<" | "
-       <<setw(15)<<student.getFacultyName()<<" | "
+       <<setw(16)<<student.getFacultyName()<<" | "
        <<setw(4)<< student.getGPA()<<" | "
        <<setw(6)<<student.getDegree()<<endl;
 
@@ -49,7 +50,7 @@ private:
         for(Student  student : students ) {
             PrintStudent(student);
         }
-        std::cout << std::string(85, '_') << std::endl;
+        std::cout << std::string(113, '_') << std::endl;
 
     }
 

@@ -12,8 +12,9 @@
 #include "../../Screens/StudentScreens/GetStudentIDScreen.h"
 #include "RegistrationScreen.h"
 #include "RegistredCoursesScreen.h"
+#include "../../Screens/sAdminScreens/StudentReportScreen.h"
 using namespace  std;
-enum eStudentScreens {Registeretion = 1, RegistredCourses =2 ,GetID = 3, Exit = 4};
+enum eStudentScreens {Registeretion = 1, RegistredCourses =2 ,GetID = 3,StudentReport =4, Exit = 5};
 class StudentMainScreen : public  Screen {
 private:
 
@@ -21,14 +22,16 @@ public:
 
     static void  Show() {
         system("cls");
-        Screen::DrawScreen("Student Main Screen");
+        Screen::DrawScreen("\t  Student Main Screen");
         cout<<"\n";
-        cout<<"1. Registeretion "<<endl;
-        cout<<"2. Registred Courses"<<endl;
-        cout<<"3. Get ID By National ID"<<endl;
-        cout<<"4. Exit"<<endl;
-
-        switch (short ANS = clsInputValidate::ReadShortNumberBetween(1,4)) {
+        cout<<Space<<"   [1] Registeretion "<<endl;
+        cout<<Space<<"   [2] Registred Courses"<<endl;
+        cout<<Space<<"   [3] Get ID By National ID"<<endl;
+        cout<<Space<<"   [4] Student Report"<<endl;
+        cout<<Space<<"   [5] Logout"<<endl;
+        cout<<"\n\t\t\t========================================\n";
+        cout<<"\t\t\tenter your choice [1 to 5] : " ;
+        switch (short ANS = clsInputValidate::ReadShortNumberBetween(1,5)) {
             case Registeretion:
                 //cout<<"Registeretion screen will be here....\n";
                     RegistrationScreen::Show();
@@ -41,6 +44,10 @@ public:
             case GetID:
                // cout<<"Get ID screen will be here....\n";
                    GetStudentIDScreen::Show();
+                Show();
+            break;
+            case StudentReport:
+                StudentReportScreen::Show(LoginStudent);
                 Show();
             break;
             case Exit:

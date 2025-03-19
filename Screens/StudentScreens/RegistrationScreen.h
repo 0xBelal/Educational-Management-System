@@ -17,13 +17,14 @@
 class RegistrationScreen : public Screen {
 private:
     static void PrintHeader() {
+        std::cout << std::string(83, '_') << std::endl;
         std::cout << std::left << std::setw(11) << "Course Code"
                   << " | " << std::setw(26) << "Course Name"
                   << " | " << std::setw(10) << "Credit Hour"
                   << " | " << std::setw(10) << "Max Mark"
                   << " | " << std::setw(30) << "Prerequisites"
                   << std::endl;
-        std::cout << std::string(81, '_') << std::endl;
+        std::cout << std::string(83, '_') << std::endl;
     }
 
     static void PrintCourse(const Course &course) {
@@ -47,31 +48,37 @@ private:
 
     static void PrintAllCourses() {
         std::vector<Course> vAllCourses = Course::GetAllCourses();
-        std::vector<Course> vEnrolledCourses = LoginStudent.getEnrolledCourses();
+        std::vector<Course> vEnrolledCourses = LoginStudent.getStudentCourses();
+        std::vector<Course> vCompleteCourses = LoginStudent.getCompletedCourses();
 
         std::cout << "\n\n";
         PrintHeader();
         for (Course &x : vAllCourses) {
             auto it = find(vEnrolledCourses.begin(),vEnrolledCourses.end(),x);
-            if(it == vEnrolledCourses.end())
+            auto it2 = find(vCompleteCourses.begin(),vCompleteCourses.end(),x);
+            if(it == vEnrolledCourses.end() && it2 == vCompleteCourses.end())
                 PrintCourse(x);
         }
+        std::cout << std::string(83, '_') << std::endl;
     }
 
 public:
     static void Show() {
-        Screen::DrawScreen("Registration Screen");
+        Screen::DrawScreen("\t   Registration Screen");
         PrintAllCourses();
         string code;
-        cout<<"\nEnter a code : ";  cin>>code;
+
+
+        cout<<"\nEnter Course Code to Register: ";  cin>>code;
         if(!Course::isCourse(code)) {
             cout<<"Invalid course code ... ";
-            return ;
+           // return ;
         }else {
             std::vector<Course> vEnrolledCourses = LoginStudent.getEnrolledCourses();
 
             if(find(vEnrolledCourses.begin(),vEnrolledCourses.end(),code) == vEnrolledCourses.end()) {
-                if(LoginStudent.registerCourse(code)) cout<<"successfully registration...."<<endl;
+                if(LoginStudent.registerCourse(code)) cout<<"Course "<< code <<" registered successfully!"<<endl;
+                else cout<<"u must register the Prerequisites Courses";
             }
             else cout<<"error in registration....."<<endl;
         }

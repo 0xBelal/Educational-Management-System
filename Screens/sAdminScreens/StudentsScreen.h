@@ -9,6 +9,7 @@
 #include <string>
 
 #include "SettingStudentMarksScreen.h"
+#include "StudentReportScreen.h"
 #include "../Screen.h"
 #include "../../lib/clsInputValidate.h"
 
@@ -23,16 +24,17 @@ private:
     static int ReadScreenOptions() {
 
 
-        cout<<"1. Setting Student Marks"<<endl;
-        cout<<"2. Student Report"<<endl;
-        cout<<"3. Exist"<<endl;
-
+        cout<<Space << "   [1] Setting Student Marks"<<endl;
+        cout<<Space << "   [2] Student Report"<<endl;
+        cout<<Space << "   [3] Exist"<<endl;
+        cout<<"\n\t\t\t========================================\n";
+        cout<<"\t\t\tenter your choice [1 to 3] : " ;
         return clsInputValidate::ReadIntNumberBetween(1,3);
     }
 public:
     static void Show() {
         system("cls");
-        Screen::DrawScreen("Students Manage Screen");
+        Screen::DrawScreen("\t  Students Manage Screen");
 
         cout<<"\n\n";
 
@@ -43,7 +45,8 @@ public:
                     SettingStudentMarksScreen::Show();
             break;
             case StudentsScreen::eStudentReport:
-                cout<<"Student Report Set Successfully"<<endl;
+              //  cout<<"Student Report Set Successfully"<<endl;
+                  StudentReportScreen::Show();
             break;
             case StudentsScreen::eExist:
                 return;

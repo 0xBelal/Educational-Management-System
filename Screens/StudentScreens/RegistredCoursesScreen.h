@@ -19,16 +19,19 @@ class RegistredCoursesScreen: public Screen {
 private:
 
     static void PrintHeader() {
+        std::cout <<"\t"<< std::string(70, '_') << std::endl;
+        cout<<"\t";
         std::cout << std::left << std::setw(11) << "Course Code"
                   << " | " << std::setw(26) << "Course Name"
                   << " | " << std::setw(10) << "Credit Hour"
                   << " | " << std::setw(10) << "Student Mark"
 
                   << std::endl;
-        std::cout << std::string(70, '_') << std::endl;
+        std::cout <<"\t"<< std::string(70, '_') << std::endl;
     }
 
     static void PrintCourse(const Course &course) {
+        cout<<"\t";
         std::cout << std::left << std::setw(11) << course.getCourseCode()
                   << " | " << std::setw(26) << course.getName()
                   << " | " << std::setw(10) << course.getCreditHours()
@@ -47,7 +50,7 @@ private:
 
 
     static void PrintRegistredCourses() {
-        std::vector<Course> vEnrolledCourses = LoginStudent.getEnrolledCourses();
+        std::vector<Course> vEnrolledCourses = LoginStudent.getStudentCourses();
 // CS102 <-> Programming 2 <-> 3 <-> 0.000000 <-> CS101
 
         std::cout << "\n\n";
@@ -59,9 +62,9 @@ private:
                 PrintCourse(x);
         }
 
-        std::cout << std::string(70, '_') << std::endl;
-        cout<<"Total Courses: "<<TotalCourses<<"             Total Hours: "<<TotalHoures<<endl;
-        std::cout << std::string(70, '_') << std::endl;
+        std::cout <<"\t"<< std::string(70, '_') << std::endl;
+        cout<<"\tTotal Courses: "<<TotalCourses<<"              Total Hours: "<<TotalHoures<<endl;
+        std::cout<<"\t" << std::string(70, '_') << std::endl;
 
 
     }
@@ -69,7 +72,7 @@ private:
 public:
     static void Show() {
         system("cls");
-        Screen::DrawScreen("Registred Courses Screen");
+        Screen::DrawScreen("\t Registred Courses Screen");
 
         PrintRegistredCourses();
 

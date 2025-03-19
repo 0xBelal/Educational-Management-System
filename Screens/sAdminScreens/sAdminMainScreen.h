@@ -24,13 +24,15 @@ public:
 
     static void  Show() {
         system("cls");
-        Screen::DrawScreen("sub-Admin Main Screen");
+        Screen::DrawScreen("\t sub-Admin Main Screen");
         cout<<"\n";
-        cout<<"1. Add New Student"<<endl;
-        cout<<"2. Add New Course"<<endl;
-        cout<<"3. Students"<<endl;
-        cout<<"4. Exit"<<endl;
-
+        cout<< Space << "   [1] Add New Student"<<endl;
+        cout<< Space << "   [2] Add New Course"<<endl;
+        cout<<Space << "   [3] Students"<<endl;
+        cout<<Space << "   [4] Logout"
+              <<endl;
+        cout<<"\n\t\t\t========================================\n";
+        cout<<"\t\t\tenter your choice [1 to 4] : " ;
         switch (short ANS = clsInputValidate::ReadShortNumberBetween(1,4)) {
             case ensAdminScreens::eAddNewStudent:
                 //  cout<<"Add new admin screen will be here....\n";
