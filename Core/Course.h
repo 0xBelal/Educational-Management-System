@@ -17,7 +17,7 @@ private:
     double studentMark;
     double maxMark;
     vector<string> PrerequisitesCourses;
-
+    bool markToDelete = false;
     string ConvertCourseObjToRecord() {
         string line = (getCourseCode() + Separator + getName() + Separator + to_string(getCreditHours()) +
                        Separator + to_string(getMaxMark()));
@@ -102,7 +102,7 @@ public:
     void setStudentMark(double m) { setMark(m); } // Calls setMark for validation
     void setMaxMark(double m) { maxMark = m; } // Set max mark dynamically
     void addPrerequisiteCourse(const string &cCourse) { PrerequisitesCourses.push_back(cCourse); }
-
+    void setMarkToDelete(bool b){ markToDelete = b;}
     // Getter methods
     string getCourseCode() const { return courseCode; }
     string getName() const { return name; }
@@ -110,6 +110,7 @@ public:
     double getStudentMark() const { return studentMark; }
     double getMaxMark() const { return maxMark; }
     vector<string> getPrerequisitesCourses() const { return PrerequisitesCourses; }
+    bool getMarkToDelete(){return  markToDelete; }
 
     bool AddNewCourse() {
         fstream file_allCourses(AllCourses.c_str(), ios::app);

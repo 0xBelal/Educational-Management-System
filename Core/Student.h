@@ -32,16 +32,7 @@ private :
             Separator +getFacultyName() + Separator +to_string( getGPA()) + Separator + getDegree());
     }
 
-    void Assigin(Student& student) {
-        this->setID(student.getID());
-        this->setFullName(student.getFullName());
-        this->setNationalID(student.getNationalID());
-        this->setPassword(student.getPassword());
-        this->setFacultyName(student.getFacultyName());
-        this->setGPA(student.getGPA());
-        this->setDegree(student.getDegree());
-        this->Empty = student.Empty;
-    }
+
     static vector<Student> LoadStudents() {
         vector<Student> students;
         vector<string> Record;
@@ -113,15 +104,62 @@ public:
     void setDegree(const string &degree) {Degree = degree;}
     void setGPA(const float &gpa) { GPA = gpa; }
     void setFacultyName(const string &Name){ FacultyName = Name;}
+    void setEnrolledCourses(vector<Course> &vCourses){enrolledCourses =vCourses;}
 
+    void Assigin(Student& student) {
+        this->setID(student.getID());
+        this->setFullName(student.getFullName());
+        this->setNationalID(student.getNationalID());
+        this->setPassword(student.getPassword());
+        this->setFacultyName(student.getFacultyName());
+        this->setGPA(student.getGPA());
+        this->setDegree(student.getDegree());
+        this->Empty = student.Empty;
+        this->enrolledCourses = getEnrolledCourses();
+    }
 
     string getDegree() const { return Degree;}
     float getGPA() const {return GPA;}
     string getFacultyName()const {return FacultyName;}
 
+
     static vector<Student> getAllStudents() {
         return LoadStudents();
     }
+     vector<Course> getStudentCourses() {
+        return LoadStudentCourses();
+    }
+    vector<Course> getCompletedCourses() {
+
+        vector<Course> courses;
+        vector<string> vCourse;
+        fstream file;
+        file.open((StudentInfo+getID()+".txt").c_str(),ios::in);
+        if(file.is_open()) {
+            string line;
+            int counter=0;
+            while(getline(file,line)) {
+               if(++counter == 1) continue;
+                // BS000 <-> Mathemathematics 0 <-> 0 <-> 0.000000
+
+                Course course;
+                vCourse = clsString::Split(line,Separator);
+                course.setCourseCode(vCourse[0]);
+                course.setName(vCourse[1]);
+                course.setCreditHours(stoi(vCourse[2]));
+                course.setStudentMark(stod(vCourse[3]));
+                for(int i=4;i<vCourse.size();i++) {
+                    course.addPrerequisiteCourse(vCourse[i]);
+                }
+
+                courses.push_back(course);
+            }
+            file.close();
+        }
+        return courses;
+
+    }
+
     bool isEmpty(){return Empty;}
 
 
@@ -131,13 +169,15 @@ public:
 
             for(Student &student : students) {
                 if(student.getNationalID() == getNationalID() && student.getPassword() == getPassword()) {
-                    this->setID(student.getID());
+                    /*this->setID(student.getID());
                     this->setFullName(student.getFullName());
                     //this->setNationalID(student.getNationalID());
                     this->setFacultyName(student.getFacultyName());
                     this->setDegree(student.getDegree());
                     this->setGPA(student.getGPA());
-                   // this->setPassword(student.getPassword());
+                   // this->setPassword(student.getPassword());*/
+
+                    this->Assigin(student);
                     return true;
                 }
             }
@@ -156,6 +196,31 @@ public:
             }
         }
         return Student();
+    }
+
+    static Student &getStudnetByID(string ID) {
+
+        Student student;
+        vector<string> vStudent;
+        fstream file;
+        file.open((StudentInfo+ID+".txt").c_str(),ios::in);
+        if(file.is_open()) {
+            string line;
+            getline(file,line);
+
+            vStudent = clsString::Split(line,Separator);
+            // 111111 <-> Belal Mohamed Mohamed Ahmed <-> 30410201203234 <-> belalmo@22 <-> Computer Science <-> 0.000000 <-> NULL
+            student.setID(vStudent[0]);
+            student.setFullName(vStudent[1]);
+            student.setNationalID(vStudent[2]);
+            student.setPassword(vStudent[3]);
+            student.setFacultyName(vStudent[4]);
+            student.setGPA(stod(vStudent[5]));
+            student.setDegree(vStudent[6]);
+            student.Empty = false;
+            file.close();
+        }
+        return student;
     }
     Student getStudentByID()  {
 
@@ -177,6 +242,8 @@ public:
         fstream file((StudentInfo+getID()+".txt").c_str(),ios::out | ios::app);
         fstream Courses((StudentCourses+getID()+".txt").c_str(),ios::out | ios::app);
         fstream All_Student((AllStudent).c_str(),ios::out | ios::app);
+        fstream AllUsers_file(AllUsers.c_str(),ios::out | ios::app);
+
         if(All_Student.is_open()) {
             All_Student<<ConvertStudentObjToRecord()<<endl;
             All_Student.close();
@@ -187,12 +254,16 @@ public:
 
         } else return false;
 
+        if(AllUsers_file.is_open()) {
+            AllUsers_file <<this->UserInfoRecord("student")<<endl;
+            AllUsers_file.close();
+        }else return false;
         
         return true;
     }
 
     vector<Course> getEnrolledCourses() {
-        return (enrolledCourses = LoadStudentCourses());
+        return  enrolledCourses;
     }
 
     bool registerCourse(const string& code) {
@@ -201,10 +272,10 @@ public:
 
 
 
-        vector<Course> enrolledCourses = this->LoadStudentCourses();
+        vector<Course> CompletedCourses = this->getCompletedCourses();
 
         unordered_set<string> enrolledSet;
-        for (const Course& s : enrolledCourses) {
+        for (const Course& s : CompletedCourses) {
             enrolledSet.insert(s.getCourseCode());
         }
 
@@ -227,7 +298,12 @@ public:
         }else return false;
         return true;
     }
+
 };
+
+
+
+
 
 static void PrintHeader() {
     std::cout << std::left << std::setw(11) << "Course Code"
@@ -258,7 +334,8 @@ static void PrintCourse(const Course &course) {
 
 
 static void PrintRegistredCourses(Student &student) {
-    std::vector<Course> vEnrolledCourses = student.getEnrolledCourses();
+    std::vector<Course> vEnrolledCourses = student.getStudentCourses();
+    student.setEnrolledCourses(vEnrolledCourses);
     // CS102 <-> Programming 2 <-> 3 <-> 0.000000 <-> CS101
 
     std::cout << "\n\n";
@@ -277,5 +354,17 @@ static void PrintRegistredCourses(Student &student) {
 
 }
 
+static void PrintStudentInfo(const Student & student ) {
+
+
+    cout<<"\nStudent Information:"<<endl;
+    cout<<"\nName : "<<student.getFullName()<<endl;
+    cout<<"ID   : "<<student.getID()<<endl;
+    cout<<"National ID : "<<student.getNationalID()<<"    ";
+    cout<<"Faculty : "<< student.getFacultyName()<<endl;//" , GPA : "<< student.getGPA()<<endl;
+    //cout<<"Degree  : "<< student.getDegree()<<endl;
+    //std::cout << std::string(50, '_') << std::endl;
+
+}
 
 #endif //STUDENT_H

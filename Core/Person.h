@@ -7,12 +7,14 @@
 
 
 #include <string>
+#include "../Global/Global.h"
 class Person {
 private:
     string ID;
     string FullName;
     string Password;
     string NationalID;
+    string type;
 
 public:
     // Default constructor - Needs definition
@@ -26,11 +28,40 @@ public:
     string getNationalID() const { return NationalID; }
     string getID() const { return ID; }
     string getPassword() const { return Password; }
+    string getType() const { return type; }
 
     void setFullName(string FullName) { this->FullName = FullName; }
     void setPassword(string Password) { this->Password = Password; }
     void setNationalID(string NationalID) { this->NationalID = NationalID; }
     void setID(string ID) { this->ID = ID; }
+    void setType(string t) { this->type = t; }
+
+     string UserInfoRecord(const string &type) {
+
+           return getID() + Separator  + getNationalID() +  Separator + getPassword()
+            +  Separator + type;
+    }
+    static vector<Person> getAllUsersInfo() {
+        fstream file;
+        file.open(AllUsers.c_str(), ios::in);
+        vector<Person> persons;
+        string line = "";
+        if (file.is_open()) {
+            Person person;
+            while( getline(file,line) ) {
+                vector<string> vRecord = clsString::Split(line,Separator);
+
+                person.setID(vRecord[0]);
+                person.setNationalID(vRecord[1]);
+                person.setPassword(vRecord[2]);
+                person.setType(vRecord[3]);
+
+                persons.push_back(person);
+            }
+            file.close();
+        }
+        return persons;
+    }
 };
 
 

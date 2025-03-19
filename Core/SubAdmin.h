@@ -11,6 +11,7 @@
 #include "../Global/Global.h"
 #include "Admin.h"
 #include "Course.h"
+#include "Student.h"
 
 using namespace std;
 
@@ -78,6 +79,8 @@ public:
     bool AddNewAdmin(){
 
             fstream file(AllAdmin_File, ios::app | ios::out);
+            fstream AllUsers_file(AllUsers.c_str(),ios::out | ios::app);
+
             if (file.is_open()) {
                 this->setID(to_string(GenerateID()));
                 file << this->ConvertAdminObjectToRecord()<<endl;
@@ -86,9 +89,15 @@ public:
             }
             file.close();
 
+        if(AllUsers_file.is_open()) {
+            AllUsers_file <<this->UserInfoRecord("subAdmin")<<endl;
+            AllUsers_file.close();
+        }else return false;
             return true;
     }
 
+    bool setStudentCourseMark(const Student &student) {
 
+    }
 };
 #endif //SUBADMIN_H
