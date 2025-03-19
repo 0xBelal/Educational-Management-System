@@ -46,6 +46,7 @@ const string StudentInfo    = R"(..\DataSource\Students\Details\StudentsInfo\Stu
 const string AllStudent     =  R"(..\DataSource\Students\All.txt)";
 const string AllCourses     = R"(..\DataSource\Students\Details\Courses\AllCourses)";
 const string CoursesInfo    = R"(..\DataSource\Students\Details\Courses\)";
+const string AllUsers       = R"(..\DataSource\AllUsers.txt)";  // id <-> national id <-> pass <-> type
 //const string AllStudent_File = R"(..\DataSource\Students\All.txt)";
-
+const string Space = "\t\t\t";
 #endif // GLOBAL_H
