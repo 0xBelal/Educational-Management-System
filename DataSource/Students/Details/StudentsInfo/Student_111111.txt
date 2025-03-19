@@ -1,1 +1,3 @@
 111111 <-> Belal Mohamed Mohamed Ahmed <-> 30410201203234 <-> belalmo@22 <-> Computer Science <-> 0.000000 <-> NULL
+BS000 <-> Mathemathematics 0 <-> 0 <-> 100.000000
+CS101 <-> Programming 1 <-> 3 <-> 100.000000
