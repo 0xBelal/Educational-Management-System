@@ -383,6 +383,7 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: E:/Computer\ Science/
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AddNewStudentScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AllStudentsScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/SettingStudentMarksScreen.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentReportScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentsScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/sAdminMainScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsDate.h \
@@ -1162,6 +1163,8 @@ E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScr
 E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistrationScreen.h:
 
 E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AddNewStudentScreen.h:
+
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentReportScreen.h:
 
 E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentsScreen.h:
 

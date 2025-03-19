@@ -380,6 +380,9 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Admin.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Admin.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Course.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Person.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Course.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/SubAdmin.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/sAdminMainScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AddNewCourseScreen.h \
@@ -390,8 +393,6 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: \
  E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsInputValidate.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AddNewStudentScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
- E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Person.h \
- E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Course.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentsScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/SettingStudentMarksScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AllStudentsScreen.h \
@@ -401,7 +402,9 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Course.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Global/LoginUser.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentReportScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Person.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Global/LoginUser.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/StudentMainScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsInputValidate.h \
@@ -409,4 +412,5 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistrationScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistredCoursesScreen.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentReportScreen.h \
  E:\Computer\ Science\Projects\Educational\ Management\ System\Global/Global.h
