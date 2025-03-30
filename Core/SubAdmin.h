@@ -24,13 +24,12 @@ class SubAdmin: public Admin {
         fstream file(FileName.c_str(), ios::in);
         vector<string> Info;
         vector<SubAdmin> vSubAdmins;
-       // SubAdmin SAdmin;
         if (file.is_open()) {
             string line;
             while (getline(file, line)) {
                 Info = clsString::Split(line, Separator);
-                SubAdmin SAdmin (Info[0], Info[1], Info[2], Info[3], Info[4]);
-                vSubAdmins.push_back(SAdmin);
+
+                vSubAdmins.push_back(convertVectorToSubAdmin(Info));
             }
             file.close();
         }
@@ -42,10 +41,20 @@ class SubAdmin: public Admin {
        return (getID() + Separator + getFullName() + Separator + getNationalID() + Separator + getPassword() + Separator +getFacultyName());
     }
 
-
+    static SubAdmin convertVectorToSubAdmin(const vector<string> &vSubAdmins) {
+        SubAdmin SAdmin;
+        SAdmin.setID(vSubAdmins[0]);
+        SAdmin.setFullName(vSubAdmins[1]);
+        SAdmin.setNationalID(vSubAdmins[2]);
+        SAdmin.setPassword(vSubAdmins[3]);
+        SAdmin.setFacultyName(vSubAdmins[4]);
+        return SAdmin;
+    }
 public:
 
-    SubAdmin(){}
+    SubAdmin() {
+        setID("");
+    }
     SubAdmin(const string &ID ,const string &FullName ,const string &NID,const string &Password , const string &FacultyName):
     Admin(ID,FullName,NID,Password) {
         this->FacultyName = FacultyName;
@@ -76,6 +85,13 @@ public:
             return false;
         }
     }
+    static SubAdmin findByID(string ID) {
+        vector<SubAdmin> AllAdmin = GetAllSubAdmins();
+        for(SubAdmin &sAdmin : AllAdmin) {
+            if(sAdmin.getID() == ID) return sAdmin;
+        }
+        return SubAdmin();
+    }
     bool AddNewAdmin(){
 
             fstream file(AllAdmin_File, ios::app | ios::out);
@@ -90,12 +106,27 @@ public:
             file.close();
 
         if(AllUsers_file.is_open()) {
-            AllUsers_file <<this->UserInfoRecord("subAdmin")<<endl;
+            AllUsers_file <<this->userInfoRecord("subAdmin")<<endl;
             AllUsers_file.close();
         }else return false;
             return true;
     }
 
+    bool deleteAdmin() {
+        vector<SubAdmin> allAdmins = _LoadAdminData(AllAdmin_File);
+        fstream allAdminFile (AllAdmin_File, ios::out);
+        if(allAdminFile.is_open()) {
+            for(SubAdmin &sAdmin : allAdmins) {
+                if(sAdmin.getID() != this->getID()) {
+                    allAdminFile << sAdmin.ConvertAdminObjectToRecord()<<endl;
+                }
+            }
+
+            allAdminFile.close();
+            return true;
+        }
+        return false;
+    }
     bool setStudentCourseMark(const Student &student) {
 
     }

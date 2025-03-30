@@ -29,7 +29,35 @@ private :
 
     string ConvertStudentObjToRecord() {
         return (getID() + Separator + getFullName() + Separator + getNationalID() + Separator + getPassword() +
-            Separator +getFacultyName() + Separator +to_string( getGPA()) + Separator + getDegree());
+            Separator +getFacultyName() + Separator +to_string( getGPA()) + Separator + getDegree()) + "\n";
+    }
+
+
+    string getLetterGrade(float grade) {
+        if (grade >= 97) return "A+";
+        else if (grade >= 93) return "A";
+        else if (grade >= 90) return "A-";
+        else if (grade >= 87) return "B+";
+        else if (grade >= 83) return "B";
+        else if (grade >= 80) return "B-";
+        else if (grade >= 77) return "C+";
+        else if (grade >= 73) return "C";
+        else if (grade >= 70) return "C-";
+        else if (grade >= 67) return "D+";
+        else if (grade >= 63) return "D";
+        else if (grade >= 60) return "D-";
+        else return "F";
+    }
+
+    string calculateDegree() {
+        vector<Course> courses = this->getCompletedCourses();
+        float grads = 0;
+        for(const Course & s : courses) {
+            grads +=s.getStudentMark();
+        }
+
+        this->setDegree(getLetterGrade(grads/(float)courses.size()));
+        return  getDegree();
     }
 
 
@@ -62,9 +90,12 @@ private :
 
            }
 
+
+            file.close();
         }
          return students;
     }
+
     vector<Course> LoadStudentCourses() {
         vector<Course> courses;
         vector<string> vCourse;
@@ -91,6 +122,7 @@ private :
         }
         return courses;
     }
+
 public:
     Student() : Empty(true) {}
     Student(const string &ID ,const string &FullName ,const string &NID,const string &Password ,
@@ -102,11 +134,11 @@ public:
 
     }
     void setDegree(const string &degree) {Degree = degree;}
-    void setGPA(const float &gpa) { GPA = gpa; }
+    void setGPA(const float &gpa) { this->GPA = gpa; }
     void setFacultyName(const string &Name){ FacultyName = Name;}
     void setEnrolledCourses(vector<Course> &vCourses){enrolledCourses =vCourses;}
 
-    void Assigin(Student& student) {
+    void assignStudent(Student& student) {
         this->setID(student.getID());
         this->setFullName(student.getFullName());
         this->setNationalID(student.getNationalID());
@@ -162,8 +194,47 @@ public:
 
     bool isEmpty(){return Empty;}
 
+    void updateStudentInfoFile() {
+        fstream file;
+        vector<Course> vCourses = this->getCompletedCourses();
+        file.open((StudentInfo+this->getID()+".txt").c_str(),ios::out);
 
 
+        if(file.is_open()) {
+            file<<this->ConvertStudentObjToRecord();
+            // BS000 <-> Mathemathematics 0 <-> 0 <-> 100.000000
+
+            for(Course &course :  vCourses) {
+               file<<course.getCourseCode()<<Separator;
+                file<<course.getName()<<Separator;
+                file<<course.getCreditHours()<<Separator;
+                file<<course.getStudentMark();
+                file<<endl;
+            }
+
+            file.close();
+        }
+    }
+    void updateAllStudentsInfoFile() {
+
+        fstream file;
+        vector<Student> vallStudents = getAllStudents();
+        file.open((AllStudent).c_str(),ios::out);
+
+
+        if(file.is_open()) {
+
+            for(Student &s :  vallStudents) {
+                if(s.getID() == this->getID()) file << this->ConvertStudentObjToRecord();
+                else file<<s.ConvertStudentObjToRecord() ;
+            }
+
+
+
+            file.close();
+        }
+
+    }
     bool isStudent() {
            vector<Student> students = getAllStudents();
 
@@ -177,7 +248,7 @@ public:
                     this->setGPA(student.getGPA());
                    // this->setPassword(student.getPassword());*/
 
-                    this->Assigin(student);
+                    this->assignStudent(student);
                     return true;
                 }
             }
@@ -222,6 +293,7 @@ public:
         }
         return student;
     }
+
     Student getStudentByID()  {
 
 
@@ -230,13 +302,13 @@ public:
         for(Student & s : students) {
             if(getID() == s.getID()) {
                 s.Empty = false;
-                this->Assigin(s);
+                this->assignStudent(s);
                 return s;
             }
         }
         return Student();
     }
-    bool AddNewStudent(){
+    bool addNewStudent(){
 
         setID(to_string(GenerateID()));
         fstream file((StudentInfo+getID()+".txt").c_str(),ios::out | ios::app);
@@ -255,7 +327,7 @@ public:
         } else return false;
 
         if(AllUsers_file.is_open()) {
-            AllUsers_file <<this->UserInfoRecord("student")<<endl;
+            AllUsers_file <<  this->userInfoRecord("student")<<endl;
             AllUsers_file.close();
         }else return false;
         
@@ -298,6 +370,24 @@ public:
         }else return false;
         return true;
     }
+
+    float calculateGPA() {
+
+        calculateDegree();
+
+        map<string, float> gradeMap = {
+            {"A+", 4.0}, {"A", 4.0}, {"A-", 3.7},
+            {"B+", 3.3}, {"B", 3.0}, {"B-", 2.7},
+            {"C+", 2.3}, {"C", 2.0}, {"C-", 1.7},
+            {"D+", 1.3}, {"D", 1.0}, {"D-", 0.7}, {"F", 0.0}
+        };
+
+        float gpa = gradeMap.count(getDegree()) ? gradeMap[getDegree()] : -1.0;
+        setGPA(gpa);
+
+        return gpa;
+    }
+
 
 };
 

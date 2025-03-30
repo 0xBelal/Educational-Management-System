@@ -18,6 +18,8 @@ private:
     double maxMark;
     vector<string> PrerequisitesCourses;
     bool markToDelete = false;
+
+
     string ConvertCourseObjToRecord() {
         string line = (getCourseCode() + Separator + getName() + Separator + to_string(getCreditHours()) +
                        Separator + to_string(getMaxMark()));
@@ -91,8 +93,6 @@ public:
     void setMark(double m) {
         if (m >= 0 && m <= maxMark) {
             studentMark = m;
-        } else {
-            cout << "Invalid mark! Should be between 0 and " << maxMark << endl;
         }
     }
 
@@ -112,10 +112,9 @@ public:
     vector<string> getPrerequisitesCourses() const { return PrerequisitesCourses; }
     bool getMarkToDelete(){return  markToDelete; }
 
-    bool AddNewCourse() {
+    bool addNewCourse() {
         fstream file_allCourses(AllCourses.c_str(), ios::app);
         fstream file_courseInfo((CoursesInfo + getCourseCode()).c_str(), ios::out);
-
         if (!file_allCourses.is_open()) {
             cerr << "Error: Unable to open file " << AllCourses << endl;
             return false;

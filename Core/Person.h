@@ -36,12 +36,12 @@ public:
     void setID(string ID) { this->ID = ID; }
     void setType(string t) { this->type = t; }
 
-     string UserInfoRecord(const string &type) {
+     string userInfoRecord(const string &type) {
 
            return getID() + Separator  + getNationalID() +  Separator + getPassword()
             +  Separator + type;
     }
-    static vector<Person> getAllUsersInfo() {
+    static vector<Person> getAllUsers() {
         fstream file;
         file.open(AllUsers.c_str(), ios::in);
         vector<Person> persons;

@@ -1,3 +1,0 @@
-CS100 <-> Computational Thinking <-> 3 <-> 0.000000
-BS100 <-> Mathemathematics 1 <-> 3 <-> 0.000000 <-> BS000
-CS102 <-> Programming 2 <-> 3 <-> 0.000000 <-> CS101
