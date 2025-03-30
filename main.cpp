@@ -2,15 +2,15 @@
 #include "Screens/LoginScreen.h"
 #include "Global/Global.h"
 #include <fstream>
+#include "Screens/Start.h"
 using namespace std;
 
-const int ss=0;
 int main()
 {
-    while (true) {
-        LoginScreen::show();
-    }
 
+    while (true) {
+        start::startProgram();
+    }
 
 
     system("pause>0");
