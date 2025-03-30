@@ -28,7 +28,7 @@ public:
         cout<<"\n";
         cout<< Space << "   [1] Add New Student"<<endl;
         cout<< Space << "   [2] Add New Course"<<endl;
-        cout<<Space << "   [3] Students"<<endl;
+        cout<<Space << "   [3] Manage Students"<<endl;
         cout<<Space << "   [4] Logout"
               <<endl;
         cout<<"\n\t\t\t========================================\n";

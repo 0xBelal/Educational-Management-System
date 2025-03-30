@@ -19,21 +19,21 @@ public:
 
     static void Show() {
         system("cls");
-        Screen::DrawScreen("Add New Sub Admin Screen");
+        Screen::DrawScreen("\tAdd New Sub Admin Screen");
 
         SubAdmin sAdmin;
-        cout<<"Full Name   : ";
+        cout<<Space <<" Full Name   : ";
         sAdmin.setFullName(clsInputValidate::ReadString());
-        cout<<"National ID : ";
+        cout<<Space<<" National ID : ";
         sAdmin.setNationalID(clsInputValidate::ReadString());
-        cout<<"Password    : ";
+        cout<<Space<<" Password    : ";
         sAdmin.setPassword(clsInputValidate::ReadPassword());
-        cout<<"Faculty     : ";
+        cout<<Space <<" Faculty     : ";
         sAdmin.setFacultyName(clsInputValidate::ReadString());
 
-        if(sAdmin.AddNewAdmin()) cout<<"\nAdd successfully....\n";
+        if(sAdmin.AddNewAdmin()) cout<<"\n"<<Space<<"admin added successfully....\n";
 
-
+        system("Pause>0");
     }
 
 };

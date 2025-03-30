@@ -28,7 +28,7 @@ private:
 
     static eScreens Login(const Person &p) {
 
-        vector<Person> vPersons = Person::getAllUsersInfo();
+        vector<Person> vPersons = Person::getAllUsers();
 
         for(Person temp : vPersons) {
             if(temp.getNationalID() == p.getNationalID() && p.getPassword() == temp.getPassword()) {

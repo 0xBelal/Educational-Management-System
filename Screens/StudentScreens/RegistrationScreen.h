@@ -78,7 +78,7 @@ public:
 
             if(find(vEnrolledCourses.begin(),vEnrolledCourses.end(),code) == vEnrolledCourses.end()) {
                 if(LoginStudent.registerCourse(code)) cout<<"Course "<< code <<" registered successfully!"<<endl;
-                else cout<<"u must register the Prerequisites Courses";
+                else cout<<"You must register for the prerequisite courses before enrolling in this course";
             }
             else cout<<"error in registration....."<<endl;
         }

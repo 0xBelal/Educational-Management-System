@@ -19,23 +19,23 @@ private:
 
      static void AddNewCourse() {
         Course course;
-        cout<<"Course Code   : ";
+        cout<<Space<<"Course Code   : ";
         course.setCourseCode(clsInputValidate::ReadString());
-        cout<<"Course Name   : ";
+        cout<<Space<<"Course Name   : ";
         course.setName(clsInputValidate::ReadString());
-        cout<<"Credits Hours : ";
+        cout<<Space<<"Credits Hours : ";
         course.setCreditHours(clsInputValidate::ReadIntNumberBetween(0,3));
-        cout<<"Are there Prerequisites ? y/n ? ";
+        cout<<Space<<"Are there Prerequisites ? y/n ? ";
         char ANS; ANS = clsInputValidate::ReadYes_Or_No_Q();
 
         switch (ANS) {
             case 'Y':
                 int NoOfCourses;
-                cout<<"The number of courses required : "; NoOfCourses = clsInputValidate::ReadIntNumberBetween(1,10);
+                cout<<Space<<"The number of courses required : "; NoOfCourses = clsInputValidate::ReadIntNumberBetween(1,10);
 
             for(int i=0;i<NoOfCourses;i++) {
 
-                cout<<i+1<<") Course Code : ";
+                cout<<Space<<i+1<<") Course Code : ";
                 course.addPrerequisiteCourse(clsInputValidate::ReadString());
 
             }
@@ -44,17 +44,17 @@ private:
 
         }
 
-        if(course.AddNewCourse()) {
-            cout<<"Course Added Successfully....";
+        if(course.addNewCourse()) {
+            cout<<"\n"<<Space<<"Course Added Successfully....";
         }else {
-            cout<<"Course Added Failed....";
+            cout<<"\n"<<Space<<"Course Added Failed....";
         }
 
     }
     public:
     static void Show() {
         system("cls");
-        Screen::DrawScreen("Add New Course Screen");
+        Screen::DrawScreen("\t  Add New Course Screen");
 
         AddNewCourse();
         system("pause>0");

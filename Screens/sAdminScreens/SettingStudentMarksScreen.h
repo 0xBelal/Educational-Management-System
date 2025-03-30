@@ -45,33 +45,45 @@ static void Show() {
             PrintStudentInfo(student);
 
              PrintRegistredCourses(student);
-           // RegistredCoursesScreen::Show();
+
             cout<<"Enter Course Code : ";
             string code = clsInputValidate::ReadString();
             fstream courseFile;
             courseFile.open((StudentCourses+student.getID()+".txt").c_str(), ios::out);
 
             bool flag = false;
+
             fstream studentFile;
             studentFile.open((StudentInfo+student.getID()+".txt").c_str(),ios::app);
-            for(Course &course : student.getEnrolledCourses()) {
 
-                if(course.getCourseCode() != code) {
-                    courseFile << course.ConvertToStudentCourseObjToRecord()<<endl;
-                }else {
-                    flag =true;
-                    cout<<"Student Mark [0 to 100] : ";
-                    course.setStudentMark(clsInputValidate::ReadIntNumberBetween(0,100));
-                    studentFile << course.ConvertToStudentCourseObjToRecord()<<endl;
+            if(courseFile.is_open() && studentFile.is_open()) {
+                for(Course &course : student.getEnrolledCourses()) {
+
+                    if(course.getCourseCode() != code) {
+                        courseFile << course.ConvertToStudentCourseObjToRecord()<<endl;
+                    }else {
+                        flag =true;
+                        cout<<"Student Mark [0 to 100] : ";
+                        course.setStudentMark(clsInputValidate::ReadIntNumberBetween(0,100));
+
+                        studentFile << course.ConvertToStudentCourseObjToRecord()<<endl;
+
+
+                    }
+
                 }
+                studentFile.close();
+                courseFile.close();
             }
 
-
-
-            studentFile.close();
-            courseFile.close();
             if (flag) {
                 cout<<"\nCourse Mark setting successufully....\n";
+
+                student.calculateGPA();
+                student.updateStudentInfoFile();
+                student.updateAllStudentsInfoFile();
+
+
             }else cout<<"Error,Invalid Course Code!"<<endl;
 
      system("pause>0");

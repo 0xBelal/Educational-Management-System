@@ -20,22 +20,22 @@ public:
 
     static void Show() {
         system("cls");
-        Screen::DrawScreen("Add New Student Screen");
+        Screen::DrawScreen("\t  Add New Student Screen");
 
        Student student;
-        cout<<"Full Name   : ";
+        cout<<Space<<" Full Name   : ";
         student.setFullName(clsInputValidate::ReadString());
-        cout<<"National ID : ";
+        cout<<Space <<" National ID : ";
         student.setNationalID(clsInputValidate::ReadString());
-        cout<<"Password    : ";
+        cout<<Space<<" Password    : ";
         student.setPassword(clsInputValidate::ReadPassword());
-        cout<<"Faculty     : ";
+        cout<<Space<<" Faculty     : ";
         student.setFacultyName(clsInputValidate::ReadString());
-        cout<<"GPA         : ";
-        student.setGPA(clsInputValidate::ReadFloatNumber());
-        cout<<"Degree      : ";
-        student.setDegree(clsInputValidate::ReadString());
-        if(student.AddNewStudent()) cout<<"\nAdd successfully....\n";
+       // cout<<"GPA         : ";
+        student.setGPA(0);
+        //cout<<"Degree      : ";
+        student.setDegree("NULL");
+        if(student.addNewStudent()) cout<<"\n\n"<<Space<<"Add successfully....\n";
         else cout<<"Error\n";
 
     }
