@@ -28,4 +28,7 @@ add_executable(Educational_Management_System main.cpp
         Screens/sAdminScreens/StudentsScreen.h
         Screens/sAdminScreens/SettingStudentMarksScreen.h
         Screens/sAdminScreens/AllStudentsScreen.h
-        Screens/sAdminScreens/StudentReportScreen.h)
+        Screens/sAdminScreens/StudentReportScreen.h
+        Screens/Start.h
+        Screens/AdminScreens/showAllSubAdmins.h
+        Screens/AdminScreens/deleteAdmin.h)
