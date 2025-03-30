@@ -374,6 +374,8 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: E:/Computer\ Science/
   E:/Computer\ Science/Projects/Educational\ Management\ System/Global/LoginUser.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/AddNewSubAdminScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/AdminMainScreen.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/deleteAdmin.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/showAllSubAdmins.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/GetStudentIDScreen.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistrationScreen.h \
@@ -391,7 +393,8 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: E:/Computer\ Science/
   E:/Computer\ Science/Projects/Educational\ Management\ System/lib/clsString.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Global/Global.h \
   E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/LoginScreen.h \
-  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h \
+  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Start.h
 
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctgmath:
@@ -765,6 +768,8 @@ C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h:
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_raw_storage_iter.h:
+
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Start.h:
 
 C:/Users/belal/AppData/Local/JetBrains/CLion\ 2024.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_relops.h:
 
@@ -1155,6 +1160,10 @@ E:/Computer\ Science/Projects/Educational\ Management\ System/Global/Global.h:
 E:/Computer\ Science/Projects/Educational\ Management\ System/Global/LoginUser.h:
 
 E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/AddNewSubAdminScreen.h:
+
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/deleteAdmin.h:
+
+E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/showAllSubAdmins.h:
 
 E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/Screen.h:
 

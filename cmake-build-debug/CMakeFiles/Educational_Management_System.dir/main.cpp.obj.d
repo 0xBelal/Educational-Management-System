@@ -383,6 +383,8 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Student.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Person.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/Course.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/deleteAdmin.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/AdminScreens/showAllSubAdmins.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Core/SubAdmin.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/sAdminMainScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/AddNewCourseScreen.h \
@@ -413,4 +415,7 @@ CMakeFiles/Educational_Management_System.dir/main.cpp.obj: \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistrationScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/StudentScreens/RegistredCoursesScreen.h \
  E:/Computer\ Science/Projects/Educational\ Management\ System/Screens/sAdminScreens/StudentReportScreen.h \
- E:\Computer\ Science\Projects\Educational\ Management\ System\Global/Global.h
+ E:\Computer\ Science\Projects\Educational\ Management\ System\Global/Global.h \
+ E:\Computer\ Science\Projects\Educational\ Management\ System\Screens/Start.h \
+ E:\Computer\ Science\Projects\Educational\ Management\ System\Screens/LoginScreen.h \
+ E:/Computer\ Science/Projects/Educational\ Management\ System/Global/Global.h
