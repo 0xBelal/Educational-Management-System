@@ -73,9 +73,6 @@ private :
 
                Record = clsString::Split(line,Separator);
                 //1009 <-> Belal Mohamed Mohamed <-> 30410201203234 <-> belalmo@22 <-> CS <-> 0.000000 <-> NULL
-
-               float gpa = (Record[6] == "NULL") ? 0.0f : stof(Record[6]);
-
                
                student.setID(Record[0]);
                student.setFullName(Record[1]);
@@ -83,7 +80,7 @@ private :
                student.setPassword( Record[3]);
                student.setFacultyName( Record[4]);
                student.setDegree( Record[6]);
-               student.setGPA( gpa);
+               student.setGPA( stof(Record[5]));
                students.push_back(student);
 
                Record.clear();
